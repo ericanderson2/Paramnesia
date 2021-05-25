@@ -11,15 +11,9 @@
 [node name="Farmer" instance=ExtResource( 2 )]
 script = ExtResource( 3 )
 MAX_SPEED = 40
-CAN_HOVER = false
-CAN_INTERACT = false
 
 [node name="Sprite" parent="." index="0"]
-visible = true
 texture = ExtResource( 1 )
-
-[node name="CollisionShape2D" parent="." index="1"]
-visible = true
 
 [node name="AnimationTree" parent="." index="3"]
 parameters/playback = SubResource( 1 )
@@ -30,6 +24,3 @@ margin_right = 11.0
 value = 100.0
 texture_over = ExtResource( 5 )
 texture_progress = ExtResource( 4 )
-
-[node name="PathTarget" parent="." index="10"]
-material = null

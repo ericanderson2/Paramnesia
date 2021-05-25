@@ -1,0 +1,67 @@
+{
+	"type" : "item",
+  "rolls" : 1,
+	"unique_drops": true,
+	"pools" : {
+		"lot_1" : 1,
+		"lot_2" : 1,
+		"lot_3" : 1,
+		"lot_4" : 1,
+		"lot_5" : 1,
+		"lot_6" : 1
+	},
+  "lot_1" : {
+  	"horse" : {
+			"weight" : 1,
+			"minimum_price" : 80,
+			"maximum_price" : 140,
+			"minimum_amount" : 1,
+			"maximum_amount" : 1
+		}
+	},
+	"lot_2" : {
+  	"horse" : {
+			"weight" : 1,
+			"minimum_price" : 80,
+			"maximum_price" : 140,
+			"minimum_amount" : 1,
+			"maximum_amount" : 1
+		}
+	},
+	"lot_3" : {
+  	"horse" : {
+			"weight" : 1,
+			"minimum_price" : 80,
+			"maximum_price" : 140,
+			"minimum_amount" : 1,
+			"maximum_amount" : 1
+		}
+	},
+	"lot_4" : {
+  	"horse" : {
+			"weight" : 1,
+			"minimum_price" : 80,
+			"maximum_price" : 140,
+			"minimum_amount" : 1,
+			"maximum_amount" : 1
+		}
+	},
+	"lot_5" : {
+  	"horse" : {
+			"weight" : 1,
+			"minimum_price" : 80,
+			"maximum_price" : 140,
+			"minimum_amount" : 1,
+			"maximum_amount" : 1
+		}
+	},
+	"lot_6" : {
+  	"horse" : {
+			"weight" : 1,
+			"minimum_price" : 80,
+			"maximum_price" : 140,
+			"minimum_amount" : 1,
+			"maximum_amount" : 1
+		}
+	}
+}

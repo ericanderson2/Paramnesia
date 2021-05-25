@@ -4,7 +4,7 @@ class_name Schedule
 
 const PLACES: Dictionary = {
 	"Building1" : Vector2(-192, -166),
-	"Building2" : Vector2(-368, -166)
+	"Building2" : Vector2(-384, -166)
 }
 
 var schedule: Dictionary = {}
@@ -23,3 +23,6 @@ func get_location(current_time: float):
 		return PLACES[schedule[closest_time_before]]
 	else:
 		return schedule[closest_time_before]
+
+func random_building() -> String:
+	return PLACES.keys()[randi() % PLACES.keys().size()]
