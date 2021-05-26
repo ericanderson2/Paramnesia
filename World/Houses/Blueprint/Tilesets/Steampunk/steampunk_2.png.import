@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Farmer.png-f1be1b38eabfd809490998181c768d56.stex"
+path="res://.import/steampunk_2.png-401cbec3a9848aa140eb2d35b04716f3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Friendly/TownNPC/Shopkeeper/Farmer.png"
-dest_files=[ "res://.import/Farmer.png-f1be1b38eabfd809490998181c768d56.stex" ]
+source_file="res://World/Houses/Blueprint/Tilesets/Steampunk/steampunk_2.png"
+dest_files=[ "res://.import/steampunk_2.png-401cbec3a9848aa140eb2d35b04716f3.stex" ]
 
 [params]
 
