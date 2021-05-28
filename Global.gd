@@ -14,6 +14,10 @@ var current_world
 var current_interior
 var ambient_mobs: int = 0
 
+var buildings: Dictionary = {
+	
+}
+
 onready var escape_menu = load("res://GUI/EscapeMenu/EscapeMenu.tscn")
 onready var console = load("res://GUI/Console/Console.tscn")
 

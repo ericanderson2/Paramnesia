@@ -1,28 +1,43 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Structures/Blueprint/Structure/Structure.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Structures/Blueprint/Structure/StaticStructure.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Structures/Sign/sign.png" type="Texture" id=2]
 [ext_resource path="res://Structures/Sign/Sign.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/18pt OUTLINE Landasa.tres" type="DynamicFont" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 3.25281
-height = 18.1053
+radius = 2.0
+height = 4.0
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 11.8868, 11.4016 )
+extents = Vector2( 8, 7 )
 
 [node name="Sign" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+can_interact = false
 
 [node name="Sprite" parent="." index="0"]
-position = Vector2( 1, -13 )
+position = Vector2( 0, -5 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( 0.523376, -2.93088 )
 rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D" parent="InteractArea" index="0"]
-position = Vector2( 0.94207, -13.6076 )
+position = Vector2( 0, -6 )
 shape = SubResource( 2 )
+
+[node name="Label" type="Label" parent="." index="3"]
+visible = false
+margin_left = -38.0
+margin_top = -26.0
+margin_right = 63.0
+margin_bottom = -7.0
+rect_scale = Vector2( 0.75, 0.75 )
+custom_fonts/font = ExtResource( 4 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://World/Houses/Blueprint/House.tscn" type="PackedScene" id=1]
+
+[node name="Clock" instance=ExtResource( 1 )]
+can_enter = false
+steampunk_modifier = 1
+
+[node name="Base" parent="." index="0"]
+tile_data = PoolIntArray( -65537, 1, 0, -131072, 1, 3, -1, 1, 65536, -65536, 1, 65539 )
+
+[node name="Roof" parent="." index="2"]
+tile_data = PoolIntArray( -524289, 5, 0, -589824, 5, 1, -458753, 5, 65536, -524288, 5, 65537, -393217, 5, 131072, -458752, 5, 131073, -327681, 5, 196608, -393216, 5, 196609, -262145, 1, 0, -327680, 1, 3, -196609, 1, 0, -262144, 1, 3, -131073, 1, 0, -196608, 1, 3 )
+
+[node name="RoofDecoration" parent="." index="3"]
+tile_data = PoolIntArray( -327681, 8, 0, -393216, 8, 1 )
+
+[node name="CollisionPolygon2D" parent="." index="6"]
+polygon = PoolVector2Array( 16, 0, 16, -33, -16, -33, -16, 0 )

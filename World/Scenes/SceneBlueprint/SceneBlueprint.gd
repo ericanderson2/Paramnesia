@@ -23,7 +23,7 @@ enum {
 }
 
 func _ready():
-	pathfinding_controller.create_navigation_map(tilemap)
+	pathfinding_controller.create_navigation_map(get_node("PathMap"))
 
 func _process(_delta):
 	if Global.do_day_cycle:

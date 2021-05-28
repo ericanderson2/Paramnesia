@@ -1313,40 +1313,40 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=30]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=31]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=32]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+
 [sub_resource type="AnimationNodeStateMachineTransition" id=41]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=42]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=43]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=44]
-switch_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id=34]
+[sub_resource type="AnimationNodeStateMachine" id=42]
 states/Idle/node = SubResource( 19 )
 states/Idle/position = Vector2( 212, 144 )
 states/Run/node = SubResource( 24 )
 states/Run/position = Vector2( 367, 285 )
 states/Walk/node = SubResource( 29 )
 states/Walk/position = Vector2( 367, 144 )
-transitions = [ "Idle", "Walk", SubResource( 30 ), "Run", "Walk", SubResource( 41 ), "Walk", "Idle", SubResource( 42 ), "Run", "Idle", SubResource( 43 ), "Walk", "Run", SubResource( 44 ) ]
+transitions = [ "Idle", "Walk", SubResource( 30 ), "Run", "Walk", SubResource( 31 ), "Walk", "Idle", SubResource( 32 ), "Run", "Idle", SubResource( 33 ), "Walk", "Run", SubResource( 41 ) ]
 start_node = "Run"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=35]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=43]
 
-[sub_resource type="CapsuleShape2D" id=36]
+[sub_resource type="CapsuleShape2D" id=44]
 radius = 13.0
 height = 16.0
 
-[sub_resource type="CapsuleShape2D" id=37]
+[sub_resource type="CapsuleShape2D" id=45]
 radius = 9.0
 
-[sub_resource type="CapsuleShape2D" id=38]
+[sub_resource type="CapsuleShape2D" id=46]
 radius = 16.0
 height = 8.0
 
-[sub_resource type="CapsuleShape2D" id=39]
+[sub_resource type="CapsuleShape2D" id=40]
 height = 18.0
 
 [node name="Horse" groups=[
@@ -1364,7 +1364,7 @@ SPECIES = "Horse"
 position = Vector2( 0, -30 )
 texture = ExtResource( 2 )
 hframes = 20
-frame = 12
+frame = 14
 
 [node name="PlayerBody" type="Sprite" parent="." index="1"]
 visible = false
@@ -1372,7 +1372,7 @@ position = Vector2( 0, -31 )
 texture = ExtResource( 4 )
 vframes = 16
 hframes = 3
-frame = 41
+frame = 43
 
 [node name="PlayerOutfit" type="Sprite" parent="." index="2"]
 visible = false
@@ -1418,11 +1418,11 @@ frame = 46
 position = Vector2( 0, -6 )
 rotation = 1.5708
 shape = SubResource( 1 )
-disabled = true
 
 [node name="SecondaryCollision" type="CollisionShape2D" parent="." index="8"]
 position = Vector2( 0, -11 )
 shape = SubResource( 2 )
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="9"]
 anims/IdleDown = SubResource( 3 )
@@ -1439,10 +1439,10 @@ anims/WalkRight = SubResource( 13 )
 anims/WalkUp = SubResource( 14 )
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="10"]
-tree_root = SubResource( 34 )
+tree_root = SubResource( 42 )
 anim_player = NodePath("../AnimationPlayer")
 process_mode = 0
-parameters/playback = SubResource( 35 )
+parameters/playback = SubResource( 43 )
 parameters/Idle/blend_position = Vector2( -1, -0.00468087 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( 0, 0 )
@@ -1450,22 +1450,22 @@ parameters/Walk/blend_position = Vector2( 0, 0 )
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( 0, -12 )
 rotation = 1.5708
-shape = SubResource( 36 )
-disabled = true
+shape = SubResource( 44 )
 
 [node name="SecondaryCollision" type="CollisionShape2D" parent="Hurtbox" index="1"]
 position = Vector2( 0, -17 )
-shape = SubResource( 37 )
+shape = SubResource( 45 )
+disabled = true
 
 [node name="CollisionShape2D" parent="InteractArea" index="0"]
 position = Vector2( 0, -14 )
 rotation = 1.5708
-shape = SubResource( 38 )
-disabled = true
+shape = SubResource( 46 )
 
 [node name="SecondaryCollision" type="CollisionShape2D" parent="InteractArea" index="1"]
 position = Vector2( 0, -17 )
-shape = SubResource( 39 )
+shape = SubResource( 40 )
+disabled = true
 
 [node name="Name" parent="." index="16"]
 margin_top = -51.0

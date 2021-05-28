@@ -1,34 +1,18 @@
-extends Structure
+extends StaticStructure
 
-const animated_text = preload("res://Structures/Sign/SignText.tscn")
+export var text: String = "" setget set_text
+export var id: int = 1
 
-export var message: String = ""
+func extra_init():
+	get_node("Label").text = text
+	get_node("Label").visible = false
 
-var message_scene = null
+func enter_mouse():
+	get_node("Label").visible = true
 
-func object_interacted_with():
-	if message_scene != null:
-		message_scene.queue_free()
-	message_scene = animated_text.instance()
-	message_scene.text = message
-	message_scene.connect("freed", self, "text_freed")
-	add_child(message_scene)
-	message_scene.rect_position += Vector2(0, -40)
+func exit_mouse():
+	get_node("Label").visible = false
 
-func save():
-	var save_dict = {
-		"filename" : get_filename(),
-		"id" : "structure",
-		"pos_x" : position.x,
-		"pos_y" : position.y,
-		"text": message
-		}
-	return save_dict
-
-func load_from_save(data):
-	global_position.x = data["pos_x"]
-	global_position.y = data["pos_y"]
-	message = data["text"]
-
-func text_freed():
-	message_scene = null
+func set_text(passed_text):
+	text = passed_text
+	get_node("Label").text = text

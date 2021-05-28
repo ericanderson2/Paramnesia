@@ -39,6 +39,7 @@ func idle(delta):
 	animation_state.travel("Idle")
 	velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	velocity = move_and_slide(velocity)
+	set_direction(Vector2(0, 1))
 
 func set_schedule():
 	pass
