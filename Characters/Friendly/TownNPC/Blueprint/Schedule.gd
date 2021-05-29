@@ -21,3 +21,6 @@ func get_location(current_time: float):
 
 func random_building() -> String:
 	return Global.buildings.keys()[randi() % Global.buildings.keys().size()]
+
+func debug():
+	print(schedule)

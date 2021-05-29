@@ -8,6 +8,7 @@ export var damage = 20
 signal coins_changed
 signal day_changed
 signal inventory_updated
+signal time_advanced
 
 var inventory = []
 var holding = 0 setget set_holding
@@ -44,7 +45,12 @@ func initialize():
 	add_item(ItemStack.new("stone_axe", 1))
 
 func _process(delta):
+	var prev_time = time_of_day
 	time_of_day += delta / 5
+	
+	if ceil(prev_time) == floor(time_of_day):
+		emit_signal("time_advanced", int(time_of_day))
+	
 	if time_of_day > 24:
 		set_day(day + 1)
 		time_of_day = 0

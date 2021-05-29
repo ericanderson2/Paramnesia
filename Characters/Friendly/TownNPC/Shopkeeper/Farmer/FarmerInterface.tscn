@@ -91,6 +91,7 @@ text = "Lot 1"
 margin_left = 43.0
 margin_right = 93.0
 margin_bottom = 37.0
+rect_min_size = Vector2( 50, 0 )
 text = "500"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]

@@ -10,9 +10,6 @@ enum {
 var state = IDLE
 var schedule: Schedule
 
-func extra_init():
-	set_schedule()
-
 func state_logic(delta):
 	if global_position.distance_to(schedule.get_location(PlayerData.time_of_day)) > 16:
 		is_pathing = start_path(schedule.get_location(PlayerData.time_of_day))
@@ -40,6 +37,3 @@ func idle(delta):
 	velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	velocity = move_and_slide(velocity)
 	set_direction(Vector2(0, 1))
-
-func set_schedule():
-	pass

@@ -74,6 +74,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Characters/Friendly/TownNPC/Blueprint/Schedule.gd"
 }, {
+"base": "House",
+"class": "Shop",
+"language": "GDScript",
+"path": "res://World/Houses/Blueprint/Shop.gd"
+}, {
 "base": "TownNPC",
 "class": "Shopkeeper",
 "language": "GDScript",
@@ -118,6 +123,7 @@ _global_script_class_icons={
 "ObjectInventory": "",
 "RootScene": "",
 "Schedule": "",
+"Shop": "",
 "Shopkeeper": "",
 "StaticStructure": "",
 "Structure": "",
