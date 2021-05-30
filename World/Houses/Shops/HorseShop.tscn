@@ -2,7 +2,8 @@
 
 [ext_resource path="res://World/Houses/Blueprint/Shop.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Houses/Shops/HorseShop.gd" type="Script" id=2]
-[ext_resource path="res://World/Houses/Blueprint/farm_tiles.tres" type="TileSet" id=3]
+[ext_resource path="res://World/Tilemaps/Houses/farm_tiles.tres" type="TileSet" id=3]
+
 
 [node name="HorseShop" instance=ExtResource( 1 )]
 script = ExtResource( 2 )

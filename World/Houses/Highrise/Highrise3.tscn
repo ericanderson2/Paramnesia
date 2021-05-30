@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://World/Houses/Blueprint/Tilesets/Steampunk/steampunk_2.tres" type="TileSet" id=1]
+[ext_resource path="res://World/Tilemaps/Houses/Steampunk/steampunk_2.tres" type="TileSet" id=1]
 [ext_resource path="res://World/Houses/Blueprint/House.tscn" type="PackedScene" id=2]
+
 
 [node name="Highrise3" instance=ExtResource( 2 )]
 

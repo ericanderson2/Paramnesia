@@ -12,16 +12,10 @@ func spawn_shopkeeper():
 	get_tree().get_current_scene().get_node("GlobalYSort/Mobs").add_child(s)
 	
 	var schedule = Schedule.new()
-	
-	var time: float = 2.0
-	for s in get_tree().get_nodes_in_group("HorseShopSign"):
-		var location = s.global_position
-		schedule.add_place(time, location)
-		time += 0.5
-	
-	schedule.add_place(6.0, "HorseShop")
-	
+	schedule.add_place(2.0, Vector2(-360, 111))
+	schedule.add_place(8.0, "HorseShop")
 	s.schedule = schedule
+	
 	s.shop = self
 	
 	setup_horses()

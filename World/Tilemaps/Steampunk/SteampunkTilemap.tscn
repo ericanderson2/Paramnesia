@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://World/Tilemaps/Steampunk/SteampunkTileset.tres" type="TileSet" id=1]
-
-[node name="TileMap" type="TileMap"]
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 16, 16 )
-cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
-format = 1

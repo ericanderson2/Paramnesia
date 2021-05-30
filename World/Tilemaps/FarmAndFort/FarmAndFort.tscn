@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://World/Tilemaps/FarmAndFort/FarmAndFort.tres" type="TileSet" id=1]
-
-[node name="FarmAndFort" type="TileMap"]
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 16, 16 )
-format = 1

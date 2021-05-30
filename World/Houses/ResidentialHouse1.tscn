@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://World/Houses/Blueprint/House.tscn" type="PackedScene" id=1]
-[ext_resource path="res://World/Tilemaps/BasicHouses.tres" type="TileSet" id=2]
+[ext_resource path="res://World/Tilemaps/Houses/BasicHouses.tres" type="TileSet" id=2]
+
+
 
 [node name="House" instance=ExtResource( 1 )]
 interior_path = "res://World/Houses/Interiors/ResidentialInterior1.tscn"

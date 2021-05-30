@@ -1,11 +1,14 @@
 [gd_scene load_steps=41 format=2]
 
-[ext_resource path="res://World/Tilemaps/InteriorWalls.tres" type="TileSet" id=1]
+[ext_resource path="res://World/Tilemaps/Houses/InteriorWalls.tres" type="TileSet" id=1]
 [ext_resource path="res://World/Houses/Interiors/Blueprint/ExitDoor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/Houses/Interiors/Blueprint/InteriorBlueprint.gd" type="Script" id=4]
 [ext_resource path="res://GUI/Inventory/GUI.tscn" type="PackedScene" id=5]
-[ext_resource path="res://World/Tilemaps/inside.png" type="Texture" id=6]
+[ext_resource path="res://World/Tilemaps/Houses/inside.png" type="Texture" id=6]
+
+
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
