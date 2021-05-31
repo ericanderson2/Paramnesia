@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://global_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Characters/Friendly/TownNPC/Quest/Blueprint/Dialog.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/16pt Landasa.tres" type="DynamicFont" id=3]
+
+[node name="Dialog" type="Control"]
+anchor_left = 0.19
+anchor_right = 0.19
+anchor_bottom = 1.0
+margin_left = -95.0
+margin_right = 405.0
+mouse_filter = 2
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 203.0
+margin_bottom = 23.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 200.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 3 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="resized" from="Label" to="." method="_on_Label_resized"]

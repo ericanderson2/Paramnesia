@@ -26,8 +26,8 @@ shader_param/highlight = false
 [sub_resource type="ShaderMaterial" id=3]
 
 [sub_resource type="CapsuleShape2D" id=4]
-radius = 3.00001
-height = 4.0
+radius = 4.00001
+height = 5.99998
 
 [sub_resource type="AnimationNodeAnimation" id=5]
 animation = "AxeLeft"
@@ -2589,7 +2589,7 @@ collision_layer = 32
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransTest"]
-position = Vector2( 0, -11 )
+position = Vector2( 0, -12 )
 shape = SubResource( 73 )
 
 [node name="SoundEffects" type="AudioStreamPlayer" parent="."]

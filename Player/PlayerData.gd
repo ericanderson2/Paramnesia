@@ -29,7 +29,7 @@ var eye_color: Color = Color("#143eae")
 func _ready():
 	initialize()
 # warning-ignore:return_value_discarded
-	self.connect("inventory_updated", MissionController, "player_inventory_changed")
+#self.connect("inventory_updated", MissionController, "player_inventory_changed")
 
 func initialize():
 	coins = 0
