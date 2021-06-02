@@ -5,7 +5,8 @@ const MISSIONS: Dictionary = {
 	1 : {
 		"prereqs" : [],
 		"title" : "Gone Fishing",
-		"start_text" : "Crazy storm last night, huh? They're saying a bull shark swam up into the pond during the flooding. Hey... would you want to help me capture that shark?",
+		"start_text" : "Crazy storm last night, huh? They're saying a bull shark swam up into the pond during the flooding. Willie's already trying to monetize it as a tourist attraction - a real shame considering the price of shark fin these days. Hey... would you want to help me catch that shark?",
+		"description" : "Follow the fisherman to the lake and kill the shark",
 		"required" : true
 	}
 }

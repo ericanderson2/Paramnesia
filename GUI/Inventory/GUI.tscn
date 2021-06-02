@@ -152,38 +152,4 @@ align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="DebugPanel" type="Control" parent="."]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel" type="Panel" parent="DebugPanel"]
-margin_left = 289.0
-margin_top = 21.0
-margin_right = 458.0
-margin_bottom = 252.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DebugPanel"]
-margin_left = 296.0
-margin_top = 28.0
-margin_right = 451.0
-margin_bottom = 244.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CheckBox" type="CheckBox" parent="."]
-margin_left = 439.0
-margin_top = -2.0
-margin_right = 463.0
-margin_bottom = 22.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="pressed" from="MissionsButton" to="." method="_on_MissionsButton_pressed"]
-[connection signal="toggled" from="CheckBox" to="." method="_on_CheckBox_toggled"]

@@ -17,9 +17,14 @@ func object_interacted_with():
 			mission = m
 			break
 	if mission != -1:
-		var d = dialog.instance()
-		d.text = MissionController.MISSIONS[mission]["start_text"]
-		get_tree().get_current_scene().get_node("GUI").add_child(d)
-		d.rect_position = get_global_transform_with_canvas().origin
-		d.rect_position -= Vector2(102, 30)
+		tween.interpolate_property(get_tree().get_current_scene().get_node("GlobalYSort/Player/RemoteTransform2D"), "global_position", get_tree().get_current_scene().get_node("GlobalYSort/Player/RemoteTransform2D").global_position, global_position, 0.3, Tween.TRANS_LINEAR)
+		tween.start()
 		
+		var d = dialog.instance()
+		d.mission = mission
+		d.connect("mission_accepted", self, "start_mission")
+		get_tree().get_current_scene().get_node("GUI").set_current_window(d)
+
+# warning-ignore:unused_argument
+func start_mission(mission: int):
+	pass

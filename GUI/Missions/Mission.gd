@@ -5,7 +5,7 @@ const required_item = preload("res://GUI/Missions/ItemWithNumbers.tscn")
 onready var expand_tween = get_node("ExpandTween")
 onready var contract_tween = get_node("ContractTween")
 
-var mission
+var mission: int
 var required: bool = false
 var type: String
 
@@ -18,9 +18,9 @@ onready var delete = get_node("DeleteButton")
 signal expand(node)
 
 func _ready():
-	get_node("Title").text = mission["title"]
-	descr_label.text = mission["description"]
-	required = mission["required"]
+	get_node("Title").text = MissionController.MISSIONS[mission]["title"]
+	descr_label.text = MissionController.MISSIONS[mission]["description"]
+	required = MissionController.MISSIONS[mission]["required"]
 	type = mission["type"]
 	resource_mission.rect_position.y = descr_label.get_line_count() * 11 + 28
 	reward.rect_position.y = descr_label.get_line_count() * 11 + 28

@@ -15,7 +15,7 @@ var current_interior
 var ambient_mobs: int = 0
 
 var buildings: Dictionary = {
-	
+	"Lake" : Vector2(-870, -375)
 }
 
 onready var escape_menu = load("res://GUI/EscapeMenu/EscapeMenu.tscn")
@@ -53,6 +53,7 @@ var block_escape: bool = true
 var debug_show_path_grid: bool = false
 var debug_show_paths: bool = true
 var do_day_cycle: bool = false
+var input_locked: bool = false
 
 var num_interacted_with: int = 0
 

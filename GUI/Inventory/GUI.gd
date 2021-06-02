@@ -29,10 +29,16 @@ func _unhandled_key_input(_event):
 
 func hide_visible():
 	get_node("ItemsOverlay").visible = false
+	get_node("Coins").visible = false
+	get_node("DebugText").visible = false
+	get_node("MissionsButton").visible = false
 	missions_button.visible = false
 
 func show_visible():
 	get_node("ItemsOverlay").visible = true
+	get_node("Coins").visible = true
+	get_node("DebugText").visible = true
+	get_node("MissionsButton").visible = true
 	missions_button.visible = true
 
 func close_open_window():
@@ -45,6 +51,7 @@ func close_open_window():
 			is_inventory_open = false
 		show_visible()
 		get_parent().get_node("GlobalYSort/Player").lock_movement = false
+		get_parent().get_node("GlobalYSort/Player/RemoteTransform2D").global_position = get_parent().get_node("GlobalYSort/Player").global_position
 		return false
 
 func _on_MissionsButton_pressed():
@@ -62,13 +69,3 @@ func set_current_window(window):
 		current_window.queue_free()
 	current_window = window
 	add_child(current_window)
-
-func update_debug_panel(dict: Dictionary):
-	Utility.delete_children(get_node("DebugPanel/VBoxContainer"))
-	for key in dict.keys():
-		var label = Label.new()
-		label.text = key + " : " + dict[key]
-		get_node("DebugPanel/VBoxContainer").add_child(label)
-
-func _on_CheckBox_toggled(button_pressed):
-	get_node("DebugPanel").visible = button_pressed

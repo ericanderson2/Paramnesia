@@ -48,7 +48,6 @@ var running: bool = false
 var last_damage_source: Object = null
 var current_threat
 
-signal update_debug
 
 func _ready():
 	animation_tree.active = true
@@ -62,9 +61,6 @@ func _ready():
 	
 	sprite.set_material(sprite.get_material().duplicate())
 	invincibility_timer.wait_time = INVINCIBILITY_TIME
-	
-# warning-ignore:return_value_discarded
-	self.connect("update_debug", get_tree().get_current_scene().get_node("GUI"), "update_debug_panel")
 	
 	get_node("ViewDistance/CollisionShape2D").shape.radius = VIEW_DISTANCE
 	
@@ -213,7 +209,6 @@ func try_to_grab_focus():
 		Global.num_interacted_with = 1
 		
 		mouse_entered()
-		emit_signal("update_debug", get_debug_dict())
 		
 		if CAN_INTERACT:
 			sprite.get_material().set_shader_param("line_thickness", 1)
@@ -257,21 +252,6 @@ func get_damage_info() -> Dictionary:
 		"type" : "normal"
 	}
 	return damage_info
-
-func get_debug_dict() -> Dictionary:
-	var dict: Dictionary = {
-		"health" : str(health) + "/" + str(MAX_HEALTH),
-		"speed" : str(MAX_SPEED) + "->" + str(MAX_SPEED_RUNNING),
-		"damage" : str(DAMAGE),
-		"flee_on_hit" : str(FLEE_ON_HIT),
-		"flee_on_low_health" : str(FLEE_ON_LOW_HEALTH) + "(" + str(FLEE_HEALTH_PERCENT) + ")",
-		"pos" : str(global_position),
-		"velocity" : str(velocity),
-		"is_pathing" : str(is_pathing),
-		"fleeing" : str(fleeing),
-		"running" : str(running)
-	}
-	return dict
 
 # determine what the character should do each physics process
 # warning-ignore:unused_argument
