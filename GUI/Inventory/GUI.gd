@@ -55,11 +55,11 @@ func close_open_window():
 		return false
 
 func _on_MissionsButton_pressed():
-	missions_button.texture_normal = load("res://GUI/Inventory/missions_indicator_seen.png")
+	missions_button.texture_normal = load("res://GUI/missions_read.png")
 	set_current_window(missions_open.instance())
 
 func new_mission():
-	missions_button.texture_normal = load("res://GUI/Inventory/missions_indicator.png")
+	missions_button.texture_normal = load("res://GUI/missions_unread.png")
 
 func set_current_window(window):
 	close_open_window()

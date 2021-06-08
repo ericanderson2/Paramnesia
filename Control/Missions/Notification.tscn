@@ -4,7 +4,7 @@
 [ext_resource path="res://Fonts/16pt Landasa.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Control/Missions/Notification.gd" type="Script" id=3]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.686275, 0.917647, 0.917647, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -29,7 +29,7 @@ __meta__ = {
 [node name="Panel" type="Panel" parent="."]
 margin_right = 44.0
 margin_bottom = 21.0
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
