@@ -18,7 +18,8 @@ func _process(_delta):
 		time = "12" + ":" + str(int((PlayerData.time_of_day - int(PlayerData.time_of_day)) * 60)) + " a.m."
 	else:
 		time = str(int(PlayerData.time_of_day)) + ":" + str(int((PlayerData.time_of_day - int(PlayerData.time_of_day)) * 60)) + " a.m."
-		
+	
+	get_node("DayIndicator").frame = int(PlayerData.time_of_day)
 	get_node("Time").text = time
 
 func update_coins():

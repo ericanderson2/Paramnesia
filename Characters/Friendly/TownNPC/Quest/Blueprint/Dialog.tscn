@@ -3,23 +3,10 @@
 [ext_resource path="res://Fonts/LandasansMedium-ALJ6m.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Characters/Friendly/TownNPC/Quest/Blueprint/Dialog.gd" type="Script" id=2]
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.4, 0.290196, 0.196078, 1 )
 border_width_left = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0.00392157, 0.0862745, 0.152941, 1 )
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.698039, 0.501961, 0.341176, 1 )
-border_width_left = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0.00392157, 0.0862745, 0.152941, 1 )
-
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.698039, 0.501961, 0.341176, 1 )
-border_width_left = 2
+border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.00392157, 0.0862745, 0.152941, 1 )
@@ -32,12 +19,28 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.00392157, 0.0862745, 0.152941, 1 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.698039, 0.501961, 0.341176, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.00392157, 0.0862745, 0.152941, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.698039, 0.501961, 0.341176, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.00392157, 0.0862745, 0.152941, 1 )
+
+[sub_resource type="DynamicFont" id=5]
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="Theme" id=4]
-default_font = SubResource( 3 )
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
 Button/colors/font_color = Color( 0.00392157, 0.0862745, 0.152941, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.00392157, 0.0862745, 0.152941, 1 )
@@ -46,9 +49,9 @@ Button/constants/hseparation = 2
 Button/fonts/font = null
 Button/styles/disabled = null
 Button/styles/focus = null
-Button/styles/hover = SubResource( 5 )
-Button/styles/normal = SubResource( 1 )
-Button/styles/pressed = SubResource( 6 )
+Button/styles/hover = SubResource( 1 )
+Button/styles/normal = SubResource( 2 )
+Button/styles/pressed = SubResource( 3 )
 Label/colors/font_color = Color( 0.00392157, 0.0862745, 0.152941, 1 )
 Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
 Label/colors/font_outline_modulate = Color( 1, 1, 1, 1 )
@@ -58,12 +61,12 @@ Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/fonts/font = null
 Label/styles/normal = null
-Panel/styles/panel = SubResource( 2 )
+Panel/styles/panel = SubResource( 4 )
 
 [node name="Dialog" type="Control"]
 margin_right = 500.0
 margin_bottom = 282.0
-theme = SubResource( 4 )
+theme = SubResource( 6 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -92,7 +95,7 @@ __meta__ = {
 
 [node name="Next" type="Button" parent="."]
 margin_left = 320.0
-margin_top = 141.0
+margin_top = 139.0
 margin_right = 356.0
 margin_bottom = 160.0
 focus_mode = 0
@@ -113,15 +116,18 @@ __meta__ = {
 
 [node name="Decline" type="Button" parent="Mission"]
 margin_left = 105.0
-margin_top = 92.0
+margin_top = 90.0
 margin_right = 212.0
 margin_bottom = 111.0
 focus_mode = 0
 enabled_focus_mode = 0
 text = "Decline"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Accept" type="Button" parent="Mission"]
-margin_top = 92.0
+margin_top = 90.0
 margin_right = 107.0
 margin_bottom = 111.0
 focus_mode = 0

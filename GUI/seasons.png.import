@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/missions_indicator.png-7d66f24589e6738f425689bce1da35ca.stex"
+path="res://.import/seasons.png-0815c019771b8d837daa192229114426.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GUI/Inventory/missions_indicator.png"
-dest_files=[ "res://.import/missions_indicator.png-7d66f24589e6738f425689bce1da35ca.stex" ]
+source_file="res://GUI/seasons.png"
+dest_files=[ "res://.import/seasons.png-0815c019771b8d837daa192229114426.stex" ]
 
 [params]
 

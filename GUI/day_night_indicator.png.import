@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/texture_progress.png-45c9e1e98f216788b880eb88baf26413.stex"
+path="res://.import/day_night_indicator.png-db9fb21c1791275760f6972106b9d074.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GUI/Inventory/Crafting/texture_progress.png"
-dest_files=[ "res://.import/texture_progress.png-45c9e1e98f216788b880eb88baf26413.stex" ]
+source_file="res://GUI/day_night_indicator.png"
+dest_files=[ "res://.import/day_night_indicator.png-db9fb21c1791275760f6972106b9d074.stex" ]
 
 [params]
 

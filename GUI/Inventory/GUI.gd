@@ -29,14 +29,14 @@ func _unhandled_key_input(_event):
 
 func hide_visible():
 	get_node("ItemsOverlay").visible = false
-	get_node("Coins").visible = false
+	get_node("Overlay").visible = false
 	get_node("DebugText").visible = false
 	get_node("MissionsButton").visible = false
 	missions_button.visible = false
 
 func show_visible():
 	get_node("ItemsOverlay").visible = true
-	get_node("Coins").visible = true
+	get_node("Overlay").visible = true
 	get_node("DebugText").visible = true
 	get_node("MissionsButton").visible = true
 	missions_button.visible = true
