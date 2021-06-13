@@ -1,11 +1,11 @@
 extends Control
 
-onready var wood = get_node("Wood")
-onready var stone = get_node("Stone")
-onready var fiber = get_node("Fiber")
-onready var ingots = get_node("Ingots")
-onready var obsidian = get_node("Obsidian")
-onready var coins = get_node("Coins")
+onready var wood = get_node("HBoxContainer/VBoxContainer/Wood")
+onready var stone = get_node("HBoxContainer/VBoxContainer/Stone")
+onready var fiber = get_node("HBoxContainer/VBoxContainer/Fiber")
+onready var ingots = get_node("HBoxContainer/VBoxContainer2/Ingots")
+onready var obsidian = get_node("HBoxContainer/VBoxContainer2/Obsidian")
+onready var coins = get_node("HBoxContainer/VBoxContainer2/Coins")
 
 var max_points: int
 var available_points: int setget set_available_points
@@ -51,15 +51,13 @@ func _ready():
 
 func set_available_points(new_amount):
 	if available_points == 0 and new_amount > 0:
-		for node in get_children():
-			if node != get_node("Points"):
-				node.set_plus_enabled()
+		for node in get_tree().get_nodes_in_group("ResourceCounter"):
+			node.set_plus_enabled()
 	available_points = new_amount
 	get_node("Points").text = "Resource Points Left: " + str(available_points) + "/" + str(max_points)
 	if available_points == 0:
-		for node in get_children():
-			if node != get_node("Points"):
-				node.set_plus_disabled()
+		for node in get_tree().get_nodes_in_group("ResourceCounter"):
+			node.set_plus_disabled()
 
 func save_points():
 	Global.starting_items["wood"] = wood.current_amount

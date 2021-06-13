@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/loading_fill.png-3f0c52f92bd252ef6ee88d975c9fd9b4.stex"
+path="res://.import/boat.png-1627043b2a78665d2cc7ac1a7390d74e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GUI/Loading/loading_fill.png"
-dest_files=[ "res://.import/loading_fill.png-3f0c52f92bd252ef6ee88d975c9fd9b4.stex" ]
+source_file="res://Characters/Friendly/TamedCreature/Boat/boat.png"
+dest_files=[ "res://.import/boat.png-1627043b2a78665d2cc7ac1a7390d74e.stex" ]
 
 [params]
 

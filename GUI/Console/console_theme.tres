@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=8 format=2]
 
-[ext_resource path="res://Fonts/14pt OUTLINE Landasa.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/fira_sans_16pt.tres" type="DynamicFont" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )

@@ -4,13 +4,25 @@
 [ext_resource path="res://GUI/coins.png" type="Texture" id=2]
 [ext_resource path="res://GUI/Inventory/GUI.gd" type="Script" id=3]
 [ext_resource path="res://GUI/day_night_indicator.png" type="Texture" id=4]
-[ext_resource path="res://Fonts/18pt OUTLINE Landasa.tres" type="DynamicFont" id=6]
-[ext_resource path="res://Fonts/14pt OUTLINE Landasa.tres" type="DynamicFont" id=7]
-[ext_resource path="res://Fonts/24pt Landasan.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Fonts/fira_sans_16pt.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Fonts/fira-sans.medium.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://GUI/ObjectInventory/ItemBackground.tscn" type="PackedScene" id=9]
 [ext_resource path="res://GUI/Inventory/ItemsOverlay.gd" type="Script" id=10]
-[ext_resource path="res://Fonts/type_writer.tres" type="DynamicFont" id=12]
 [ext_resource path="res://GUI/Inventory/Coins.gd" type="Script" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+outline_size = 1
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 10
+outline_size = 1
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 3 )
@@ -20,7 +32,7 @@ margin_left = 1.0
 margin_top = 1.0
 margin_right = 40.0
 margin_bottom = 10.0
-custom_fonts/font = ExtResource( 12 )
+custom_fonts/font = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -63,11 +75,12 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="ItemsOverlay/SelectedItem"]
 margin_left = 8.0
-margin_top = 21.0
-margin_right = 35.0
+margin_top = 24.0
+margin_right = 36.0
 margin_bottom = 40.0
 grow_horizontal = 0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_outline_modulate = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -88,12 +101,13 @@ margin_bottom = 20.0
 rect_scale = Vector2( 1.5, 1.5 )
 
 [node name="Label" type="Label" parent="ItemsOverlay/BackItem"]
-margin_left = 7.0
-margin_top = 16.0
-margin_right = 27.0
-margin_bottom = 33.0
+margin_left = 8.0
+margin_top = 19.0
+margin_right = 28.0
+margin_bottom = 32.0
 grow_horizontal = 0
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_outline_modulate = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -126,7 +140,7 @@ margin_top = 5.0
 margin_right = 50.0
 margin_bottom = 30.0
 grow_horizontal = 0
-custom_fonts/font = ExtResource( 8 )
+custom_fonts/font = ExtResource( 5 )
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -144,7 +158,7 @@ margin_top = 96.0
 margin_right = 498.0
 margin_bottom = 121.0
 grow_horizontal = 0
-custom_fonts/font = ExtResource( 8 )
+custom_fonts/font = ExtResource( 5 )
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -157,7 +171,7 @@ margin_top = 121.0
 margin_right = 496.0
 margin_bottom = 146.0
 grow_horizontal = 0
-custom_fonts/font = ExtResource( 8 )
+custom_fonts/font = ExtResource( 5 )
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false

@@ -1,13 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Fonts/8px_plain_type_writer.tres" type="DynamicFont" id=1]
 [ext_resource path="res://GUI/Inventory/FloatingItemNumber.gd" type="Script" id=2]
 
 [node name="FloatingItemNumber" type="Label"]
 margin_right = 78.0
 margin_bottom = 8.0
 rect_scale = Vector2( 0.5, 0.5 )
-custom_fonts/font = ExtResource( 1 )
 align = 1
 script = ExtResource( 2 )
 __meta__ = {

@@ -1,62 +1,59 @@
-[gd_resource type="Theme" load_steps=6 format=2]
-
-[ext_resource path="res://Fonts/32pt Landasa.tres" type="DynamicFont" id=1]
+[gd_resource type="Theme" load_steps=5 format=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_bottom = 3.0
-bg_color = Color( 0.698039, 0.501961, 0.341176, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_color = Color( 0.00392157, 0.0862745, 0.152941, 1 )
-corner_radius_top_left = 4
-corner_radius_top_right = 4
+bg_color = Color( 0.168627, 0.168627, 0.168627, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
 expand_margin_top = 2.0
 shadow_color = Color( 0, 0, 0, 0 )
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.439216, 0.333333, 0.247059, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0.00392157, 0.0862745, 0.152941, 1 )
-corner_radius_top_left = 4
-corner_radius_top_right = 4
+bg_color = Color( 0.486275, 0.486275, 0.486275, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
 shadow_color = Color( 0, 0, 0, 0 )
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.439216, 0.333333, 0.247059, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0.00392157, 0.0862745, 0.152941, 1 )
-corner_radius_top_left = 4
-corner_radius_top_right = 4
+bg_color = Color( 0.129412, 0.129412, 0.129412, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
 shadow_color = Color( 0, 0, 0, 0 )
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.439216, 0.333333, 0.247059, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0.00392157, 0.0862745, 0.152941, 1 )
-corner_radius_top_left = 4
-corner_radius_top_right = 4
+bg_color = Color( 0.486275, 0.486275, 0.486275, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
 shadow_color = Color( 0, 0, 0, 0 )
 anti_aliasing = false
 
 [resource]
-default_font = ExtResource( 1 )
-Button/colors/font_color = Color( 0.00392157, 0.0862745, 0.152941, 1 )
-Button/colors/font_color_disabled = Color( 0.00392157, 0.0862745, 0.152941, 1 )
-Button/colors/font_color_hover = Color( 0.168627, 0.196078, 0.215686, 1 )
-Button/colors/font_color_pressed = Color( 0.00392157, 0.0862745, 0.152941, 1 )
+Button/colors/font_color = Color( 0.584314, 0.584314, 0.584314, 1 )
+Button/colors/font_color_disabled = Color( 1, 1, 1, 1 )
+Button/colors/font_color_hover = Color( 0.584314, 0.584314, 0.584314, 1 )
+Button/colors/font_color_pressed = Color( 0.584314, 0.584314, 0.584314, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = null
 Button/styles/disabled = SubResource( 1 )

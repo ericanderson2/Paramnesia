@@ -1,7 +1,4 @@
-[gd_resource type="DynamicFont" load_steps=2 format=2]
-
-[ext_resource path="res://Fonts/LandasansMedium-ALJ6m.otf" type="DynamicFontData" id=1]
+[gd_resource type="DynamicFont" format=2]
 
 [resource]
 use_filter = true
-font_data = ExtResource( 1 )

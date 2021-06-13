@@ -1,15 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://GUI/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://global_theme.tres" type="Theme" id=2]
-[ext_resource path="res://Fonts/LandasansMedium-ALJ6m.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Fonts/fira_sans_32pt.tres" type="DynamicFont" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
-
-[sub_resource type="DynamicFont" id=2]
-size = 64
-use_filter = true
-font_data = ExtResource( 3 )
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -37,51 +32,61 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 140.0
-margin_top = 15.0
-margin_right = 349.0
-margin_bottom = 80.0
-custom_fonts/font = SubResource( 2 )
+margin_top = 51.0
+margin_right = 500.0
+margin_bottom = 90.0
+custom_fonts/font = ExtResource( 3 )
 text = "Paramnesia"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LoadGame" type="Button" parent="."]
-margin_left = 187.0
-margin_top = 135.0
-margin_right = 303.0
-margin_bottom = 172.0
-text = "Load Game"
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 195.0
+margin_top = 124.0
+margin_right = 295.0
+margin_bottom = 232.0
+rect_min_size = Vector2( 100, 0 )
+custom_constants/separation = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NewGame" type="Button" parent="."]
-margin_left = 187.0
-margin_top = 95.0
-margin_right = 303.0
-margin_bottom = 132.0
+[node name="NewGame" type="Button" parent="VBoxContainer"]
+margin_right = 100.0
+margin_bottom = 24.0
+focus_mode = 0
 text = "New Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Settings" type="Button" parent="."]
-margin_left = 187.0
-margin_top = 175.0
-margin_right = 303.0
-margin_bottom = 212.0
+[node name="LoadGame" type="Button" parent="VBoxContainer"]
+margin_top = 26.0
+margin_right = 100.0
+margin_bottom = 50.0
+focus_mode = 0
+text = "Load Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+margin_top = 52.0
+margin_right = 100.0
+margin_bottom = 76.0
+focus_mode = 0
 text = "Settings"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Exit" type="Button" parent="."]
-margin_left = 188.0
-margin_top = 215.0
-margin_right = 303.0
-margin_bottom = 252.0
+[node name="Exit" type="Button" parent="VBoxContainer"]
+margin_top = 78.0
+margin_right = 100.0
+margin_bottom = 102.0
+focus_mode = 0
 text = "Exit"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -91,7 +96,7 @@ __meta__ = {
 visible = false
 margin_right = 500.0
 margin_bottom = 282.0
-[connection signal="pressed" from="LoadGame" to="." method="_on_LoadGame_pressed"]
-[connection signal="pressed" from="NewGame" to="." method="_on_NewGame_pressed"]
-[connection signal="pressed" from="Settings" to="." method="_on_Settings_pressed"]
-[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/LoadGame" to="." method="_on_LoadGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_Exit_pressed"]

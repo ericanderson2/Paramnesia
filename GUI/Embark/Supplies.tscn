@@ -28,34 +28,41 @@ visible = false
 margin_left = 205.0
 margin_top = 234.0
 margin_right = 285.0
-margin_bottom = 271.0
+margin_bottom = 258.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "Embark"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NextButton" type="Button" parent="."]
-margin_left = 385.0
-margin_top = 234.0
-margin_right = 447.0
-margin_bottom = 271.0
+margin_left = 392.0
+margin_top = 235.0
+margin_right = 452.0
+margin_bottom = 259.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "Next"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PrevButton" type="Button" parent="."]
-margin_left = 50.0
-margin_top = 234.0
-margin_right = 112.0
-margin_bottom = 271.0
+margin_left = 48.0
+margin_top = 235.0
+margin_right = 108.0
+margin_bottom = 259.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LivestockPage" type="Control" parent="."]
-margin_right = 500.0
+margin_left = -1.0
+margin_right = 499.0
 margin_bottom = 235.0
 script = ExtResource( 4 )
 __meta__ = {
@@ -63,145 +70,217 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="LivestockPage"]
-margin_top = 6.0
+margin_left = 1.0
+margin_top = 24.0
 margin_right = 500.0
-margin_bottom = 39.0
+margin_bottom = 44.0
+text = "Livestock Points: 0"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CattleCounter" parent="LivestockPage" instance=ExtResource( 3 )]
-margin_left = -47.5
-margin_top = 43.255
-margin_right = -457.0
-margin_bottom = -150.745
+[node name="HBoxContainer" type="HBoxContainer" parent="LivestockPage"]
+margin_left = 1.0
+margin_top = 70.0
+margin_right = 501.0
+margin_bottom = 202.0
+custom_constants/separation = 40
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Resource" parent="LivestockPage/CattleCounter/HBoxContainer" index="0"]
-margin_right = 59.0
-text = "Cattle "
+[node name="VBoxContainer" type="VBoxContainer" parent="LivestockPage/HBoxContainer"]
+margin_left = 81.0
+margin_right = 223.0
+margin_bottom = 132.0
+custom_constants/separation = 30
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="MinusButton" parent="LivestockPage/CattleCounter/HBoxContainer" index="1"]
-margin_left = 63.0
-margin_right = 83.0
+[node name="CattleCounter" parent="LivestockPage/HBoxContainer/VBoxContainer" groups=[
+"LivestockCounter",
+] instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 142.0
+margin_bottom = 24.0
 
-[node name="Amount" parent="LivestockPage/CattleCounter/HBoxContainer" index="2"]
-margin_left = 87.0
-margin_right = 125.0
+[node name="Resource" parent="LivestockPage/HBoxContainer/VBoxContainer/CattleCounter" index="0"]
+margin_right = 52.0
+text = "Cattle  "
 
-[node name="PlusButton" parent="LivestockPage/CattleCounter/HBoxContainer" index="3"]
-margin_left = 129.0
-margin_right = 149.0
+[node name="MinusButton" parent="LivestockPage/HBoxContainer/VBoxContainer/CattleCounter" index="1"]
+margin_left = 56.0
+margin_right = 76.0
 
-[node name="PigCounter" parent="LivestockPage" instance=ExtResource( 3 )]
-margin_left = -47.5
-margin_top = 96.255
-margin_right = -457.0
-margin_bottom = -97.745
+[node name="Amount" parent="LivestockPage/HBoxContainer/VBoxContainer/CattleCounter" index="2"]
+margin_left = 80.0
+margin_right = 118.0
 
-[node name="Resource" parent="LivestockPage/PigCounter/HBoxContainer" index="0"]
-margin_right = 59.0
-text = "Swine "
+[node name="PlusButton" parent="LivestockPage/HBoxContainer/VBoxContainer/CattleCounter" index="3"]
+margin_left = 122.0
+margin_right = 142.0
 
-[node name="MinusButton" parent="LivestockPage/PigCounter/HBoxContainer" index="1"]
-margin_left = 63.0
-margin_right = 83.0
+[node name="PigCounter" parent="LivestockPage/HBoxContainer/VBoxContainer" groups=[
+"LivestockCounter",
+] instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 54.0
+margin_right = 142.0
+margin_bottom = 78.0
 
-[node name="Amount" parent="LivestockPage/PigCounter/HBoxContainer" index="2"]
-margin_left = 87.0
-margin_right = 125.0
+[node name="Resource" parent="LivestockPage/HBoxContainer/VBoxContainer/PigCounter" index="0"]
+margin_right = 52.0
+text = "Swine  "
 
-[node name="PlusButton" parent="LivestockPage/PigCounter/HBoxContainer" index="3"]
-margin_left = 129.0
-margin_right = 149.0
+[node name="MinusButton" parent="LivestockPage/HBoxContainer/VBoxContainer/PigCounter" index="1"]
+margin_left = 56.0
+margin_right = 76.0
 
-[node name="GoatCounter" parent="LivestockPage" instance=ExtResource( 3 )]
-margin_left = -34.5
-margin_top = 149.255
-margin_right = -444.0
-margin_bottom = -44.745
+[node name="Amount" parent="LivestockPage/HBoxContainer/VBoxContainer/PigCounter" index="2"]
+margin_left = 80.0
+margin_right = 118.0
 
-[node name="Resource" parent="LivestockPage/GoatCounter/HBoxContainer" index="0"]
-margin_right = 46.0
-text = "Goat "
+[node name="PlusButton" parent="LivestockPage/HBoxContainer/VBoxContainer/PigCounter" index="3"]
+margin_left = 122.0
+margin_right = 142.0
 
-[node name="MinusButton" parent="LivestockPage/GoatCounter/HBoxContainer" index="1"]
-margin_left = 50.0
-margin_right = 70.0
+[node name="GoatCounter" parent="LivestockPage/HBoxContainer/VBoxContainer" groups=[
+"LivestockCounter",
+] instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 108.0
+margin_right = 142.0
+margin_bottom = 132.0
 
-[node name="Amount" parent="LivestockPage/GoatCounter/HBoxContainer" index="2"]
-margin_left = 74.0
-margin_right = 112.0
+[node name="Resource" parent="LivestockPage/HBoxContainer/VBoxContainer/GoatCounter" index="0"]
+margin_left = 10.0
+margin_right = 52.0
+text = "Goat  "
 
-[node name="PlusButton" parent="LivestockPage/GoatCounter/HBoxContainer" index="3"]
-margin_left = 116.0
-margin_right = 136.0
+[node name="MinusButton" parent="LivestockPage/HBoxContainer/VBoxContainer/GoatCounter" index="1"]
+margin_left = 56.0
+margin_right = 76.0
 
-[node name="SheepCounter" parent="LivestockPage" instance=ExtResource( 3 )]
-margin_left = 185.5
-margin_top = 43.255
-margin_right = -224.0
-margin_bottom = -150.745
+[node name="Amount" parent="LivestockPage/HBoxContainer/VBoxContainer/GoatCounter" index="2"]
+margin_left = 80.0
+margin_right = 118.0
 
-[node name="Resource" parent="LivestockPage/SheepCounter/HBoxContainer" index="0"]
-margin_right = 60.0
-text = "Sheep "
+[node name="PlusButton" parent="LivestockPage/HBoxContainer/VBoxContainer/GoatCounter" index="3"]
+margin_left = 122.0
+margin_right = 142.0
 
-[node name="MinusButton" parent="LivestockPage/SheepCounter/HBoxContainer" index="1"]
-margin_left = 64.0
-margin_right = 84.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="LivestockPage/HBoxContainer"]
+margin_left = 263.0
+margin_right = 419.0
+margin_bottom = 132.0
+custom_constants/separation = 30
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Amount" parent="LivestockPage/SheepCounter/HBoxContainer" index="2"]
-margin_left = 88.0
-margin_right = 126.0
+[node name="SheepCounter" parent="LivestockPage/HBoxContainer/VBoxContainer2" groups=[
+"LivestockCounter",
+] instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 156.0
+margin_bottom = 24.0
 
-[node name="PlusButton" parent="LivestockPage/SheepCounter/HBoxContainer" index="3"]
-margin_left = 130.0
-margin_right = 150.0
+[node name="Resource" parent="LivestockPage/HBoxContainer/VBoxContainer2/SheepCounter" index="0"]
+margin_left = 12.0
+margin_right = 66.0
+text = "Sheep  "
 
-[node name="ChickenCounter" parent="LivestockPage" instance=ExtResource( 3 )]
-margin_left = 170.5
-margin_top = 96.255
-margin_right = -239.0
-margin_bottom = -97.745
+[node name="MinusButton" parent="LivestockPage/HBoxContainer/VBoxContainer2/SheepCounter" index="1"]
+margin_left = 70.0
+margin_right = 90.0
 
-[node name="Resource" parent="LivestockPage/ChickenCounter/HBoxContainer" index="0"]
-margin_right = 75.0
-text = "Chicken "
+[node name="Amount" parent="LivestockPage/HBoxContainer/VBoxContainer2/SheepCounter" index="2"]
+margin_left = 94.0
+margin_right = 132.0
 
-[node name="MinusButton" parent="LivestockPage/ChickenCounter/HBoxContainer" index="1"]
-margin_left = 79.0
-margin_right = 99.0
+[node name="PlusButton" parent="LivestockPage/HBoxContainer/VBoxContainer2/SheepCounter" index="3"]
+margin_left = 136.0
+margin_right = 156.0
 
-[node name="Amount" parent="LivestockPage/ChickenCounter/HBoxContainer" index="2"]
-margin_left = 103.0
-margin_right = 141.0
+[node name="ChickenCounter" parent="LivestockPage/HBoxContainer/VBoxContainer2" groups=[
+"LivestockCounter",
+] instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 54.0
+margin_right = 156.0
+margin_bottom = 78.0
 
-[node name="PlusButton" parent="LivestockPage/ChickenCounter/HBoxContainer" index="3"]
-margin_left = 145.0
-margin_right = 165.0
+[node name="Resource" parent="LivestockPage/HBoxContainer/VBoxContainer2/ChickenCounter" index="0"]
+margin_right = 66.0
+text = "Chicken  "
 
-[node name="RabbitCounter" parent="LivestockPage" instance=ExtResource( 3 )]
-margin_left = 183.5
-margin_top = 149.255
-margin_right = -226.0
-margin_bottom = -44.745
+[node name="MinusButton" parent="LivestockPage/HBoxContainer/VBoxContainer2/ChickenCounter" index="1"]
+margin_left = 70.0
+margin_right = 90.0
 
-[node name="Resource" parent="LivestockPage/RabbitCounter/HBoxContainer" index="0"]
-margin_right = 62.0
-text = "Rabbit "
+[node name="Amount" parent="LivestockPage/HBoxContainer/VBoxContainer2/ChickenCounter" index="2"]
+margin_left = 94.0
+margin_right = 132.0
 
-[node name="MinusButton" parent="LivestockPage/RabbitCounter/HBoxContainer" index="1"]
-margin_left = 66.0
-margin_right = 86.0
+[node name="PlusButton" parent="LivestockPage/HBoxContainer/VBoxContainer2/ChickenCounter" index="3"]
+margin_left = 136.0
+margin_right = 156.0
 
-[node name="Amount" parent="LivestockPage/RabbitCounter/HBoxContainer" index="2"]
-margin_left = 90.0
-margin_right = 128.0
+[node name="RabbitCounter" parent="LivestockPage/HBoxContainer/VBoxContainer2" groups=[
+"LivestockCounter",
+] instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 108.0
+margin_right = 156.0
+margin_bottom = 132.0
 
-[node name="PlusButton" parent="LivestockPage/RabbitCounter/HBoxContainer" index="3"]
-margin_left = 132.0
-margin_right = 152.0
+[node name="Resource" parent="LivestockPage/HBoxContainer/VBoxContainer2/RabbitCounter" index="0"]
+margin_left = 8.0
+margin_right = 66.0
+text = "Rabbit  "
+
+[node name="MinusButton" parent="LivestockPage/HBoxContainer/VBoxContainer2/RabbitCounter" index="1"]
+margin_left = 70.0
+margin_right = 90.0
+
+[node name="Amount" parent="LivestockPage/HBoxContainer/VBoxContainer2/RabbitCounter" index="2"]
+margin_left = 94.0
+margin_right = 132.0
+
+[node name="PlusButton" parent="LivestockPage/HBoxContainer/VBoxContainer2/RabbitCounter" index="3"]
+margin_left = 136.0
+margin_right = 156.0
 
 [node name="ResourcePage" type="Control" parent="."]
 visible = false
@@ -213,145 +292,209 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="ResourcePage"]
-margin_top = 6.0
+margin_top = 24.0
 margin_right = 500.0
-margin_bottom = 39.0
+margin_bottom = 44.0
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Wood" parent="ResourcePage" instance=ExtResource( 3 )]
-margin_left = -42.5
-margin_top = 43.255
-margin_right = -452.0
-margin_bottom = -176.0
+[node name="HBoxContainer" type="HBoxContainer" parent="ResourcePage"]
+margin_top = 70.0
+margin_right = 500.0
+margin_bottom = 202.0
+custom_constants/separation = 40
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Resource" parent="ResourcePage/Wood/HBoxContainer" index="0"]
-margin_right = 54.0
-text = "Wood "
+[node name="VBoxContainer" type="VBoxContainer" parent="ResourcePage/HBoxContainer"]
+margin_left = 77.0
+margin_right = 217.0
+margin_bottom = 132.0
+custom_constants/separation = 30
+alignment = 2
 
-[node name="MinusButton" parent="ResourcePage/Wood/HBoxContainer" index="1"]
-margin_left = 58.0
-margin_right = 78.0
+[node name="Wood" parent="ResourcePage/HBoxContainer/VBoxContainer" groups=[
+"ResourceCounter",
+] instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 140.0
+margin_bottom = 24.0
 
-[node name="Amount" parent="ResourcePage/Wood/HBoxContainer" index="2"]
-margin_left = 82.0
-margin_right = 120.0
+[node name="Resource" parent="ResourcePage/HBoxContainer/VBoxContainer/Wood" index="0"]
+margin_left = 1.0
+margin_right = 50.0
+text = "Wood  "
 
-[node name="PlusButton" parent="ResourcePage/Wood/HBoxContainer" index="3"]
-margin_left = 124.0
-margin_right = 144.0
+[node name="MinusButton" parent="ResourcePage/HBoxContainer/VBoxContainer/Wood" index="1"]
+margin_left = 54.0
+margin_right = 74.0
 
-[node name="Stone" parent="ResourcePage" instance=ExtResource( 3 )]
-margin_left = -45.5
-margin_top = 96.255
-margin_right = -455.0
-margin_bottom = -123.0
+[node name="Amount" parent="ResourcePage/HBoxContainer/VBoxContainer/Wood" index="2"]
+margin_left = 78.0
+margin_right = 116.0
 
-[node name="Resource" parent="ResourcePage/Stone/HBoxContainer" index="0"]
-margin_right = 57.0
-text = "Stone "
+[node name="PlusButton" parent="ResourcePage/HBoxContainer/VBoxContainer/Wood" index="3"]
+margin_left = 120.0
+margin_right = 140.0
 
-[node name="MinusButton" parent="ResourcePage/Stone/HBoxContainer" index="1"]
-margin_left = 61.0
-margin_right = 81.0
+[node name="Stone" parent="ResourcePage/HBoxContainer/VBoxContainer" groups=[
+"ResourceCounter",
+] instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 54.0
+margin_right = 140.0
+margin_bottom = 78.0
 
-[node name="Amount" parent="ResourcePage/Stone/HBoxContainer" index="2"]
-margin_left = 85.0
-margin_right = 123.0
+[node name="Resource" parent="ResourcePage/HBoxContainer/VBoxContainer/Stone" index="0"]
+margin_right = 50.0
+text = "Stone  "
 
-[node name="PlusButton" parent="ResourcePage/Stone/HBoxContainer" index="3"]
-margin_left = 127.0
-margin_right = 147.0
+[node name="MinusButton" parent="ResourcePage/HBoxContainer/VBoxContainer/Stone" index="1"]
+margin_left = 54.0
+margin_right = 74.0
 
-[node name="Fiber" parent="ResourcePage" instance=ExtResource( 3 )]
-margin_left = -36.5
-margin_top = 149.255
-margin_right = -446.0
-margin_bottom = -70.0
+[node name="Amount" parent="ResourcePage/HBoxContainer/VBoxContainer/Stone" index="2"]
+margin_left = 78.0
+margin_right = 116.0
 
-[node name="Resource" parent="ResourcePage/Fiber/HBoxContainer" index="0"]
-margin_right = 48.0
-text = "Fiber "
+[node name="PlusButton" parent="ResourcePage/HBoxContainer/VBoxContainer/Stone" index="3"]
+margin_left = 120.0
+margin_right = 140.0
 
-[node name="MinusButton" parent="ResourcePage/Fiber/HBoxContainer" index="1"]
-margin_left = 52.0
-margin_right = 72.0
+[node name="Fiber" parent="ResourcePage/HBoxContainer/VBoxContainer" groups=[
+"ResourceCounter",
+] instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 108.0
+margin_right = 140.0
+margin_bottom = 132.0
 
-[node name="Amount" parent="ResourcePage/Fiber/HBoxContainer" index="2"]
-margin_left = 76.0
-margin_right = 114.0
+[node name="Resource" parent="ResourcePage/HBoxContainer/VBoxContainer/Fiber" index="0"]
+margin_left = 4.0
+margin_right = 50.0
+text = "Fiber  "
 
-[node name="PlusButton" parent="ResourcePage/Fiber/HBoxContainer" index="3"]
-margin_left = 118.0
-margin_right = 138.0
+[node name="MinusButton" parent="ResourcePage/HBoxContainer/VBoxContainer/Fiber" index="1"]
+margin_left = 54.0
+margin_right = 74.0
 
-[node name="Ingots" parent="ResourcePage" instance=ExtResource( 3 )]
-margin_left = 184.5
-margin_top = 43.255
-margin_right = -225.0
-margin_bottom = -176.0
+[node name="Amount" parent="ResourcePage/HBoxContainer/VBoxContainer/Fiber" index="2"]
+margin_left = 78.0
+margin_right = 116.0
 
-[node name="Resource" parent="ResourcePage/Ingots/HBoxContainer" index="0"]
-margin_right = 61.0
-text = "Ingots "
+[node name="PlusButton" parent="ResourcePage/HBoxContainer/VBoxContainer/Fiber" index="3"]
+margin_left = 120.0
+margin_right = 140.0
 
-[node name="MinusButton" parent="ResourcePage/Ingots/HBoxContainer" index="1"]
-margin_left = 65.0
-margin_right = 85.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="ResourcePage/HBoxContainer"]
+margin_left = 257.0
+margin_right = 422.0
+margin_bottom = 132.0
+custom_constants/separation = 30
+alignment = 2
 
-[node name="Amount" parent="ResourcePage/Ingots/HBoxContainer" index="2"]
-margin_left = 89.0
-margin_right = 127.0
+[node name="Ingots" parent="ResourcePage/HBoxContainer/VBoxContainer2" groups=[
+"ResourceCounter",
+] instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 165.0
+margin_bottom = 24.0
 
-[node name="PlusButton" parent="ResourcePage/Ingots/HBoxContainer" index="3"]
-margin_left = 131.0
-margin_right = 151.0
+[node name="Resource" parent="ResourcePage/HBoxContainer/VBoxContainer2/Ingots" index="0"]
+margin_left = 21.0
+margin_right = 75.0
+text = "Ingots  "
 
-[node name="Obsidian" parent="ResourcePage" instance=ExtResource( 3 )]
-margin_left = 165.5
-margin_top = 96.255
-margin_right = -244.0
-margin_bottom = -123.0
+[node name="MinusButton" parent="ResourcePage/HBoxContainer/VBoxContainer2/Ingots" index="1"]
+margin_left = 79.0
+margin_right = 99.0
 
-[node name="Resource" parent="ResourcePage/Obsidian/HBoxContainer" index="0"]
-margin_right = 80.0
-text = "Obsidian "
+[node name="Amount" parent="ResourcePage/HBoxContainer/VBoxContainer2/Ingots" index="2"]
+margin_left = 103.0
+margin_right = 141.0
 
-[node name="MinusButton" parent="ResourcePage/Obsidian/HBoxContainer" index="1"]
-margin_left = 84.0
-margin_right = 104.0
+[node name="PlusButton" parent="ResourcePage/HBoxContainer/VBoxContainer2/Ingots" index="3"]
+margin_left = 145.0
+margin_right = 165.0
 
-[node name="Amount" parent="ResourcePage/Obsidian/HBoxContainer" index="2"]
-margin_left = 108.0
-margin_right = 146.0
+[node name="Obsidian" parent="ResourcePage/HBoxContainer/VBoxContainer2" groups=[
+"ResourceCounter",
+] instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 54.0
+margin_right = 165.0
+margin_bottom = 78.0
 
-[node name="PlusButton" parent="ResourcePage/Obsidian/HBoxContainer" index="3"]
-margin_left = 150.0
-margin_right = 170.0
+[node name="Resource" parent="ResourcePage/HBoxContainer/VBoxContainer2/Obsidian" index="0"]
+margin_right = 75.0
+text = "Obsidian  "
 
-[node name="Coins" parent="ResourcePage" instance=ExtResource( 3 )]
-margin_left = 192.5
-margin_top = 149.255
-margin_right = -217.0
-margin_bottom = -70.0
+[node name="MinusButton" parent="ResourcePage/HBoxContainer/VBoxContainer2/Obsidian" index="1"]
+margin_left = 79.0
+margin_right = 99.0
 
-[node name="Resource" parent="ResourcePage/Coins/HBoxContainer" index="0"]
-margin_right = 53.0
-text = "Coins "
+[node name="Amount" parent="ResourcePage/HBoxContainer/VBoxContainer2/Obsidian" index="2"]
+margin_left = 103.0
+margin_right = 141.0
 
-[node name="MinusButton" parent="ResourcePage/Coins/HBoxContainer" index="1"]
-margin_left = 57.0
-margin_right = 77.0
+[node name="PlusButton" parent="ResourcePage/HBoxContainer/VBoxContainer2/Obsidian" index="3"]
+margin_left = 145.0
+margin_right = 165.0
 
-[node name="Amount" parent="ResourcePage/Coins/HBoxContainer" index="2"]
-margin_left = 81.0
-margin_right = 119.0
+[node name="Coins" parent="ResourcePage/HBoxContainer/VBoxContainer2" groups=[
+"ResourceCounter",
+] instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 108.0
+margin_right = 165.0
+margin_bottom = 132.0
 
-[node name="PlusButton" parent="ResourcePage/Coins/HBoxContainer" index="3"]
-margin_left = 123.0
-margin_right = 143.0
+[node name="Resource" parent="ResourcePage/HBoxContainer/VBoxContainer2/Coins" index="0"]
+margin_left = 27.0
+margin_right = 75.0
+text = "Coins  "
+
+[node name="MinusButton" parent="ResourcePage/HBoxContainer/VBoxContainer2/Coins" index="1"]
+margin_left = 79.0
+margin_right = 99.0
+
+[node name="Amount" parent="ResourcePage/HBoxContainer/VBoxContainer2/Coins" index="2"]
+margin_left = 103.0
+margin_right = 141.0
+
+[node name="PlusButton" parent="ResourcePage/HBoxContainer/VBoxContainer2/Coins" index="3"]
+margin_left = 145.0
+margin_right = 165.0
 
 [node name="SpecialistPage" type="Control" parent="."]
 visible = false
@@ -363,143 +506,194 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="SpecialistPage"]
-margin_top = 6.0
+margin_top = 24.0
 margin_right = 500.0
-margin_bottom = 39.0
+margin_bottom = 44.0
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ConstructionCounter" parent="SpecialistPage" instance=ExtResource( 3 )]
-margin_left = -64.5
-margin_top = 74.255
-margin_right = -474.0
-margin_bottom = -145.0
+[node name="HBoxContainer" type="HBoxContainer" parent="SpecialistPage"]
+margin_top = 90.0
+margin_right = 500.0
+margin_bottom = 183.0
+custom_constants/separation = 40
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Resource" parent="SpecialistPage/ConstructionCounter/HBoxContainer" index="0"]
-margin_right = 115.0
-text = "Construction"
+[node name="VBoxContainer" type="VBoxContainer" parent="SpecialistPage/HBoxContainer"]
+margin_left = 53.0
+margin_right = 244.0
+margin_bottom = 93.0
+custom_constants/separation = 45
+alignment = 2
 
-[node name="MinusButton" parent="SpecialistPage/ConstructionCounter/HBoxContainer" index="1"]
-margin_left = 119.0
-margin_right = 139.0
+[node name="ConstructionCounter" parent="SpecialistPage/HBoxContainer/VBoxContainer" groups=[
+"SupplyCounter",
+] instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 191.0
+margin_bottom = 24.0
 
-[node name="Amount" parent="SpecialistPage/ConstructionCounter/HBoxContainer" index="2"]
-margin_left = 143.0
-margin_right = 181.0
+[node name="Resource" parent="SpecialistPage/HBoxContainer/VBoxContainer/ConstructionCounter" index="0"]
+margin_right = 101.0
+text = "Construction  "
 
-[node name="PlusButton" parent="SpecialistPage/ConstructionCounter/HBoxContainer" index="3"]
-margin_left = 185.0
-margin_right = 205.0
+[node name="MinusButton" parent="SpecialistPage/HBoxContainer/VBoxContainer/ConstructionCounter" index="1"]
+margin_left = 105.0
+margin_right = 125.0
 
-[node name="FarmingCounter" parent="SpecialistPage" instance=ExtResource( 3 )]
-margin_left = -20.5
-margin_top = 135.255
-margin_right = -430.0
-margin_bottom = -58.745
+[node name="Amount" parent="SpecialistPage/HBoxContainer/VBoxContainer/ConstructionCounter" index="2"]
+margin_left = 129.0
+margin_right = 167.0
 
-[node name="Resource" parent="SpecialistPage/FarmingCounter/HBoxContainer" index="0"]
+[node name="PlusButton" parent="SpecialistPage/HBoxContainer/VBoxContainer/ConstructionCounter" index="3"]
+margin_left = 171.0
+margin_right = 191.0
+
+[node name="FarmingCounter" parent="SpecialistPage/HBoxContainer/VBoxContainer" groups=[
+"SupplyCounter",
+] instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 69.0
+margin_right = 191.0
+margin_bottom = 93.0
+
+[node name="Resource" parent="SpecialistPage/HBoxContainer/VBoxContainer/FarmingCounter" index="0"]
+margin_left = 33.0
+margin_right = 101.0
+text = "Farming  "
+
+[node name="MinusButton" parent="SpecialistPage/HBoxContainer/VBoxContainer/FarmingCounter" index="1"]
+margin_left = 105.0
+margin_right = 125.0
+
+[node name="Amount" parent="SpecialistPage/HBoxContainer/VBoxContainer/FarmingCounter" index="2"]
+margin_left = 129.0
+margin_right = 167.0
+
+[node name="PlusButton" parent="SpecialistPage/HBoxContainer/VBoxContainer/FarmingCounter" index="3"]
+margin_left = 171.0
+margin_right = 191.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="SpecialistPage/HBoxContainer"]
+margin_left = 284.0
+margin_right = 446.0
+margin_bottom = 93.0
+custom_constants/separation = 45
+alignment = 2
+
+[node name="TradingCounter" parent="SpecialistPage/HBoxContainer/VBoxContainer2" groups=[
+"SupplyCounter",
+] instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 162.0
+margin_bottom = 24.0
+
+[node name="Resource" parent="SpecialistPage/HBoxContainer/VBoxContainer2/TradingCounter" index="0"]
+margin_left = 8.0
 margin_right = 72.0
-text = "Farming"
+text = "Trading  "
 
-[node name="MinusButton" parent="SpecialistPage/FarmingCounter/HBoxContainer" index="1"]
+[node name="MinusButton" parent="SpecialistPage/HBoxContainer/VBoxContainer2/TradingCounter" index="1"]
 margin_left = 76.0
 margin_right = 96.0
 
-[node name="Amount" parent="SpecialistPage/FarmingCounter/HBoxContainer" index="2"]
+[node name="Amount" parent="SpecialistPage/HBoxContainer/VBoxContainer2/TradingCounter" index="2"]
 margin_left = 100.0
 margin_right = 138.0
 
-[node name="PlusButton" parent="SpecialistPage/FarmingCounter/HBoxContainer" index="3"]
+[node name="PlusButton" parent="SpecialistPage/HBoxContainer/VBoxContainer2/TradingCounter" index="3"]
 margin_left = 142.0
 margin_right = 162.0
 
-[node name="TradingCounter" parent="SpecialistPage" instance=ExtResource( 3 )]
-margin_left = 183.5
-margin_top = 74.255
-margin_right = -226.0
-margin_bottom = -119.745
+[node name="ForagingCounter" parent="SpecialistPage/HBoxContainer/VBoxContainer2" groups=[
+"SupplyCounter",
+] instance=ExtResource( 3 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 69.0
+margin_right = 162.0
+margin_bottom = 93.0
 
-[node name="Resource" parent="SpecialistPage/TradingCounter/HBoxContainer" index="0"]
-margin_right = 66.0
-text = "Trading"
+[node name="Resource" parent="SpecialistPage/HBoxContainer/VBoxContainer2/ForagingCounter" index="0"]
+margin_right = 72.0
+text = "Foraging  "
 
-[node name="MinusButton" parent="SpecialistPage/TradingCounter/HBoxContainer" index="1"]
-margin_left = 70.0
-margin_right = 90.0
+[node name="MinusButton" parent="SpecialistPage/HBoxContainer/VBoxContainer2/ForagingCounter" index="1"]
+margin_left = 76.0
+margin_right = 96.0
 
-[node name="Amount" parent="SpecialistPage/TradingCounter/HBoxContainer" index="2"]
-margin_left = 94.0
-margin_right = 132.0
+[node name="Amount" parent="SpecialistPage/HBoxContainer/VBoxContainer2/ForagingCounter" index="2"]
+margin_left = 100.0
+margin_right = 138.0
 
-[node name="PlusButton" parent="SpecialistPage/TradingCounter/HBoxContainer" index="3"]
-margin_left = 136.0
-margin_right = 156.0
-
-[node name="ForagingCounter" parent="SpecialistPage" instance=ExtResource( 3 )]
-margin_left = 173.5
-margin_top = 138.255
-margin_right = -236.0
-margin_bottom = -55.745
-
-[node name="Resource" parent="SpecialistPage/ForagingCounter/HBoxContainer" index="0"]
-margin_right = 76.0
-text = "Foraging"
-
-[node name="MinusButton" parent="SpecialistPage/ForagingCounter/HBoxContainer" index="1"]
-margin_left = 80.0
-margin_right = 100.0
-
-[node name="Amount" parent="SpecialistPage/ForagingCounter/HBoxContainer" index="2"]
-margin_left = 104.0
-margin_right = 142.0
-
-[node name="PlusButton" parent="SpecialistPage/ForagingCounter/HBoxContainer" index="3"]
-margin_left = 146.0
-margin_right = 166.0
+[node name="PlusButton" parent="SpecialistPage/HBoxContainer/VBoxContainer2/ForagingCounter" index="3"]
+margin_left = 142.0
+margin_right = 162.0
 
 [node name="PointWarning" type="Label" parent="."]
 visible = false
-margin_left = 332.0
-margin_top = 245.0
-margin_right = 578.0
-margin_bottom = 278.0
-rect_scale = Vector2( 0.5, 0.5 )
-custom_colors/font_color = Color( 0.827451, 0, 0, 1 )
-text = "Warning: not all points used"
+margin_left = 352.0
+margin_top = 224.0
+margin_right = 473.0
+margin_bottom = 267.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Warning: Not all points used"
+align = 1
+autowrap = true
 [connection signal="pressed" from="EmbarkButton" to="." method="_on_EmbarkButton_pressed"]
 [connection signal="pressed" from="NextButton" to="." method="_on_NextButton_pressed"]
 [connection signal="pressed" from="PrevButton" to="." method="_on_PrevButton_pressed"]
 
-[editable path="LivestockPage/CattleCounter"]
+[editable path="LivestockPage/HBoxContainer/VBoxContainer/CattleCounter"]
 
-[editable path="LivestockPage/PigCounter"]
+[editable path="LivestockPage/HBoxContainer/VBoxContainer/PigCounter"]
 
-[editable path="LivestockPage/GoatCounter"]
+[editable path="LivestockPage/HBoxContainer/VBoxContainer/GoatCounter"]
 
-[editable path="LivestockPage/SheepCounter"]
+[editable path="LivestockPage/HBoxContainer/VBoxContainer2/SheepCounter"]
 
-[editable path="LivestockPage/ChickenCounter"]
+[editable path="LivestockPage/HBoxContainer/VBoxContainer2/ChickenCounter"]
 
-[editable path="LivestockPage/RabbitCounter"]
+[editable path="LivestockPage/HBoxContainer/VBoxContainer2/RabbitCounter"]
 
-[editable path="ResourcePage/Wood"]
+[editable path="ResourcePage/HBoxContainer/VBoxContainer/Wood"]
 
-[editable path="ResourcePage/Stone"]
+[editable path="ResourcePage/HBoxContainer/VBoxContainer/Stone"]
 
-[editable path="ResourcePage/Fiber"]
+[editable path="ResourcePage/HBoxContainer/VBoxContainer/Fiber"]
 
-[editable path="ResourcePage/Ingots"]
+[editable path="ResourcePage/HBoxContainer/VBoxContainer2/Ingots"]
 
-[editable path="ResourcePage/Obsidian"]
+[editable path="ResourcePage/HBoxContainer/VBoxContainer2/Obsidian"]
 
-[editable path="ResourcePage/Coins"]
+[editable path="ResourcePage/HBoxContainer/VBoxContainer2/Coins"]
 
-[editable path="SpecialistPage/ConstructionCounter"]
+[editable path="SpecialistPage/HBoxContainer/VBoxContainer/ConstructionCounter"]
 
-[editable path="SpecialistPage/FarmingCounter"]
+[editable path="SpecialistPage/HBoxContainer/VBoxContainer/FarmingCounter"]
 
-[editable path="SpecialistPage/TradingCounter"]
+[editable path="SpecialistPage/HBoxContainer/VBoxContainer2/TradingCounter"]
 
-[editable path="SpecialistPage/ForagingCounter"]
+[editable path="SpecialistPage/HBoxContainer/VBoxContainer2/ForagingCounter"]

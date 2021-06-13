@@ -1,9 +1,9 @@
 extends Control
 
-onready var construction = get_node("ConstructionCounter")
-onready var farming = get_node("FarmingCounter")
-onready var trading = get_node("TradingCounter")
-onready var foraging = get_node("ForagingCounter")
+onready var construction = get_node("HBoxContainer/VBoxContainer/ConstructionCounter")
+onready var farming = get_node("HBoxContainer/VBoxContainer/FarmingCounter")
+onready var trading = get_node("HBoxContainer/VBoxContainer2/TradingCounter")
+onready var foraging = get_node("HBoxContainer/VBoxContainer2/ForagingCounter")
 
 var max_points: int
 var available_points: int setget set_available_points
@@ -33,15 +33,13 @@ func _ready():
 
 func set_available_points(new_amount):
 	if available_points == 0 and new_amount > 0:
-		for node in get_children():
-			if node != get_node("Points"):
-				node.set_plus_enabled()
+		for node in get_tree().get_nodes_in_group("SupplyCounter"):
+			node.set_plus_enabled()
 	available_points = new_amount
 	get_node("Points").text = "Specialist Points Left: " + str(available_points) + "/" + str(max_points)
 	if available_points == 0:
-		for node in get_children():
-			if node != get_node("Points"):
-				node.set_plus_disabled()
+		for node in get_tree().get_nodes_in_group("SupplyCounter"):
+			node.set_plus_disabled()
 
 func save_points():
 	Global.starting_items["construction"] = construction.current_amount

@@ -1,11 +1,11 @@
 extends Control
 
-onready var cattle = get_node("CattleCounter")
-onready var pig = get_node("PigCounter")
-onready var goat = get_node("GoatCounter")
-onready var sheep = get_node("SheepCounter")
-onready var chicken = get_node("ChickenCounter")
-onready var rabbit = get_node("RabbitCounter")
+onready var cattle = get_node("HBoxContainer/VBoxContainer/CattleCounter")
+onready var pig = get_node("HBoxContainer/VBoxContainer/PigCounter")
+onready var goat = get_node("HBoxContainer/VBoxContainer/GoatCounter")
+onready var sheep = get_node("HBoxContainer/VBoxContainer2/SheepCounter")
+onready var chicken = get_node("HBoxContainer/VBoxContainer2/ChickenCounter")
+onready var rabbit = get_node("HBoxContainer/VBoxContainer2/RabbitCounter")
 
 var max_points: int
 var available_points: int setget set_available_points
@@ -51,15 +51,13 @@ func _ready():
 
 func set_available_points(new_amount):
 	if available_points == 0 and new_amount > 0:
-		for node in get_children():
-			if node != get_node("Points"):
-				node.set_plus_enabled()
+		for node in get_tree().get_nodes_in_group("LivestockCounter"):
+			node.set_plus_enabled()
 	available_points = new_amount
 	get_node("Points").text = "Livestock Points Left: " + str(available_points) + "/" + str(max_points)
 	if available_points == 0:
-		for node in get_children():
-			if node != get_node("Points"):
-				node.set_plus_disabled()
+		for node in get_tree().get_nodes_in_group("LivestockCounter"):
+			node.set_plus_disabled()
 
 func save_points():
 	Global.starting_items["cow"] = cattle.current_amount

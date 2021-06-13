@@ -13,23 +13,24 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="."]
-margin_left = 96.0
-margin_top = 46.0
-margin_right = 402.0
-margin_bottom = 231.0
+margin_left = 119.0
+margin_top = 71.0
+margin_right = 386.0
+margin_bottom = 215.0
 
 [node name="Label" type="Label" parent="."]
-margin_left = 174.0
-margin_top = 52.0
-margin_right = 317.0
-margin_bottom = 85.0
+margin_left = 119.0
+margin_top = 78.0
+margin_right = 386.0
+margin_bottom = 98.0
 text = "Horse Salesman"
+align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_left = 135.0
-margin_top = 93.0
-margin_right = 363.0
-margin_bottom = 212.0
+margin_left = 119.0
+margin_top = 107.0
+margin_right = 386.0
+margin_bottom = 199.0
 custom_constants/separation = 40
 alignment = 1
 __meta__ = {
@@ -37,117 +38,131 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 1.0
-margin_right = 94.0
-margin_bottom = 119.0
+margin_left = 25.0
+margin_right = 113.0
+margin_bottom = 92.0
+custom_constants/separation = 10
 
 [node name="Lot1" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
-margin_right = 93.0
-margin_bottom = 37.0
+margin_right = 88.0
+margin_bottom = 24.0
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Lot1"]
 margin_top = 2.0
-margin_right = 39.0
-margin_bottom = 35.0
+margin_right = 34.0
+margin_bottom = 22.0
 text = "Lot 1"
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/Lot1"]
-margin_left = 43.0
-margin_right = 93.0
-margin_bottom = 37.0
-rect_min_size = Vector2( 50, 37 )
+margin_left = 38.0
+margin_right = 88.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 50, 0 )
+focus_mode = 0
+enabled_focus_mode = 0
 text = "500"
 
 [node name="Lot2" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 41.0
-margin_right = 93.0
-margin_bottom = 78.0
+margin_top = 34.0
+margin_right = 88.0
+margin_bottom = 58.0
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Lot2"]
 margin_top = 2.0
-margin_right = 39.0
-margin_bottom = 35.0
+margin_right = 34.0
+margin_bottom = 22.0
 text = "Lot 1"
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/Lot2"]
-margin_left = 43.0
-margin_right = 93.0
-margin_bottom = 37.0
+margin_left = 38.0
+margin_right = 88.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 50, 0 )
+focus_mode = 0
+enabled_focus_mode = 0
 text = "500"
 
 [node name="Lot3" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 82.0
-margin_right = 93.0
-margin_bottom = 119.0
+margin_top = 68.0
+margin_right = 88.0
+margin_bottom = 92.0
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Lot3"]
 margin_top = 2.0
-margin_right = 39.0
-margin_bottom = 35.0
+margin_right = 34.0
+margin_bottom = 22.0
 text = "Lot 1"
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer/Lot3"]
-margin_left = 43.0
-margin_right = 93.0
-margin_bottom = 37.0
+margin_left = 38.0
+margin_right = 88.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 50, 0 )
+focus_mode = 0
+enabled_focus_mode = 0
 text = "500"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 134.0
-margin_right = 227.0
-margin_bottom = 119.0
+margin_left = 153.0
+margin_right = 241.0
+margin_bottom = 92.0
+custom_constants/separation = 10
 
 [node name="Lot4" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
-margin_right = 93.0
-margin_bottom = 37.0
+margin_right = 88.0
+margin_bottom = 24.0
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/Lot4"]
 margin_top = 2.0
-margin_right = 39.0
-margin_bottom = 35.0
+margin_right = 34.0
+margin_bottom = 22.0
 text = "Lot 1"
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2/Lot4"]
-margin_left = 43.0
-margin_right = 93.0
-margin_bottom = 37.0
+margin_left = 38.0
+margin_right = 88.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 50, 0 )
+focus_mode = 0
+enabled_focus_mode = 0
 text = "500"
 
 [node name="Lot5" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
-margin_top = 41.0
-margin_right = 93.0
-margin_bottom = 78.0
+margin_top = 34.0
+margin_right = 88.0
+margin_bottom = 58.0
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/Lot5"]
 margin_top = 2.0
-margin_right = 39.0
-margin_bottom = 35.0
+margin_right = 34.0
+margin_bottom = 22.0
 text = "Lot 1"
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2/Lot5"]
-margin_left = 43.0
-margin_right = 93.0
-margin_bottom = 37.0
+margin_left = 38.0
+margin_right = 88.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 50, 0 )
+focus_mode = 0
+enabled_focus_mode = 0
 text = "500"
 
 [node name="Lot6" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
-margin_top = 82.0
-margin_right = 93.0
-margin_bottom = 119.0
+margin_top = 68.0
+margin_right = 88.0
+margin_bottom = 92.0
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2/Lot6"]
 margin_top = 2.0
-margin_right = 39.0
-margin_bottom = 35.0
+margin_right = 34.0
+margin_bottom = 22.0
 text = "Lot 1"
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2/Lot6"]
-margin_left = 43.0
-margin_right = 93.0
-margin_bottom = 37.0
+margin_left = 38.0
+margin_right = 88.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 50, 0 )
+focus_mode = 0
+enabled_focus_mode = 0
 text = "500"

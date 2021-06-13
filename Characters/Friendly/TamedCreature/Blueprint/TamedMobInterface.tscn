@@ -31,19 +31,19 @@ __meta__ = {
 }
 
 [node name="Background" type="Panel" parent="."]
-margin_left = 54.0
-margin_top = 41.0
-margin_right = 426.0
-margin_bottom = 225.0
+margin_left = 64.0
+margin_top = 53.0
+margin_right = 436.0
+margin_bottom = 237.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Name" type="Label" parent="."]
 margin_left = 114.0
-margin_top = 50.0
+margin_top = 61.0
 margin_right = 154.0
-margin_bottom = 83.0
+margin_bottom = 81.0
 grow_horizontal = 2
 align = 1
 __meta__ = {
@@ -51,10 +51,10 @@ __meta__ = {
 }
 
 [node name="Species" type="Label" parent="."]
-margin_left = 114.0
-margin_top = 183.0
-margin_right = 154.0
-margin_bottom = 216.0
+margin_left = 112.0
+margin_top = 193.0
+margin_right = 152.0
+margin_bottom = 213.0
 grow_horizontal = 2
 align = 1
 valign = 1
@@ -63,50 +63,50 @@ __meta__ = {
 }
 
 [node name="FollowButton" type="Button" parent="."]
-margin_left = 216.0
-margin_top = 73.0
-margin_right = 316.0
-margin_bottom = 110.0
+margin_left = 243.0
+margin_top = 107.0
+margin_right = 325.0
+margin_bottom = 131.0
 text = "Follow"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="StanceButton" type="Button" parent="."]
-margin_left = 216.0
-margin_top = 113.0
-margin_right = 316.0
-margin_bottom = 150.0
+margin_left = 243.0
+margin_top = 135.0
+margin_right = 325.0
+margin_bottom = 159.0
 text = "Neutral"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ChangeNameButton" type="Button" parent="."]
-margin_left = 320.0
-margin_top = 73.0
-margin_right = 420.0
-margin_bottom = 110.0
+margin_left = 329.0
+margin_top = 107.0
+margin_right = 411.0
+margin_bottom = 131.0
 text = "Rename"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MatingButton" type="Button" parent="."]
-margin_left = 217.0
-margin_top = 153.0
-margin_right = 317.0
-margin_bottom = 190.0
+margin_left = 244.0
+margin_top = 163.0
+margin_right = 326.0
+margin_bottom = 187.0
 text = "Mating"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SlaughterButton" type="Button" parent="."]
-margin_left = 320.0
-margin_top = 113.0
-margin_right = 420.0
-margin_bottom = 150.0
+margin_left = 329.0
+margin_top = 135.0
+margin_right = 411.0
+margin_bottom = 159.0
 text = "Slaughter"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -122,30 +122,30 @@ anims/Idle = SubResource( 1 )
 
 [node name="NameChange" type="Panel" parent="."]
 visible = false
-margin_left = 133.0
-margin_top = 67.0
-margin_right = 357.0
-margin_bottom = 206.0
+margin_left = 157.0
+margin_top = 76.0
+margin_right = 351.0
+margin_bottom = 215.0
 
 [node name="LineEdit" type="LineEdit" parent="NameChange"]
-margin_left = 45.0
-margin_top = 40.0
-margin_right = 189.0
-margin_bottom = 83.0
+margin_left = 27.0
+margin_top = 52.0
+margin_right = 171.0
+margin_bottom = 82.0
 caret_blink = true
 
 [node name="Label" type="Label" parent="NameChange"]
-margin_left = 33.0
-margin_top = 4.0
+margin_top = 18.0
 margin_right = 194.0
-margin_bottom = 37.0
+margin_bottom = 38.0
 text = "Enter a new name"
+align = 1
 
 [node name="DoneButton" type="Button" parent="NameChange"]
-margin_left = 77.0
-margin_top = 91.0
-margin_right = 150.0
-margin_bottom = 128.0
+margin_left = 61.0
+margin_top = 99.0
+margin_right = 134.0
+margin_bottom = 123.0
 text = "Done"
 __meta__ = {
 "_edit_use_anchors_": false

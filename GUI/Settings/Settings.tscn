@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://GUI/Settings/Settings.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Settings/Tabs/controls_up.png" type="Texture" id=2]
@@ -11,7 +11,7 @@
 [ext_resource path="res://GUI/Settings/slider_knob_texture.png" type="Texture" id=9]
 [ext_resource path="res://GUI/Settings/SpeakerIcon/audio_icon_2.png" type="Texture" id=10]
 [ext_resource path="res://GUI/Settings/ItemCollectionMessages.gd" type="Script" id=11]
-[ext_resource path="res://Fonts/type_writer.tres" type="DynamicFont" id=12]
+[ext_resource path="res://Fonts/type_writer.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://GUI/Settings/box_checked.png" type="Texture" id=13]
 [ext_resource path="res://GUI/Settings/box_unchecked.png" type="Texture" id=14]
 [ext_resource path="res://GUI/Settings/reset_button_down.png" type="Texture" id=15]
@@ -23,6 +23,11 @@ texture = ExtResource( 8 )
 region_rect = Rect2( 0, 0, 120, 8 )
 
 [sub_resource type="StyleBoxTexture" id=2]
+
+[sub_resource type="DynamicFont" id=3]
+size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
 
 [node name="Settings" type="CanvasLayer"]
 pause_mode = 2
@@ -114,7 +119,6 @@ margin_left = 170.0
 margin_top = 77.0
 margin_right = 206.0
 margin_bottom = 85.0
-custom_fonts/font = ExtResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Master"
 __meta__ = {
@@ -162,7 +166,6 @@ margin_left = 153.0
 margin_top = 77.0
 margin_right = 207.0
 margin_bottom = 85.0
-custom_fonts/font = ExtResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Interface"
 
@@ -207,7 +210,6 @@ margin_left = 177.0
 margin_top = 77.0
 margin_right = 207.0
 margin_bottom = 85.0
-custom_fonts/font = ExtResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Music"
 
@@ -252,7 +254,6 @@ margin_left = 177.0
 margin_top = 77.0
 margin_right = 207.0
 margin_bottom = 85.0
-custom_fonts/font = ExtResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "World"
 
@@ -275,7 +276,6 @@ margin_left = 167.0
 margin_top = 187.0
 margin_right = 217.0
 margin_bottom = 195.0
-custom_fonts/font = ExtResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Mute Game"
 
@@ -297,7 +297,6 @@ margin_top = 2.0
 margin_right = 91.0
 margin_bottom = 10.0
 rect_scale = Vector2( 0.5, 0.5 )
-custom_fonts/font = ExtResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Reset to default"
 
@@ -356,7 +355,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.5
 theme = ExtResource( 17 )
-custom_fonts/font = ExtResource( 12 )
+custom_fonts/font = SubResource( 3 )
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
