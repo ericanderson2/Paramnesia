@@ -1,6 +1,6 @@
 extends Panel
 
-const recipe_item = preload("res://GUI/NewInventory/RecipeItem.tscn")
+const recipe_item = preload("res://GUI/Inventory/RecipeItem.tscn")
 
 onready var selected = get_node("SelectedItem")
 onready var options = get_node("Options")

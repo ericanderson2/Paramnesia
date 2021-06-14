@@ -1,7 +1,7 @@
 extends Control
 
-const item_base = preload("res://GUI/ObjectInventory/InventoryItem.tscn")
-const item_background = preload("res://GUI/ObjectInventory/ItemBackground.tscn")
+const item_base = preload("res://GUI/Inventory/ObjectInventory/InventoryItem.tscn")
+const item_background = preload("res://GUI/Inventory/ObjectInventory/ItemBackground.tscn")
 
 var max_slots: int = 5
 var inventory
@@ -16,7 +16,7 @@ func redraw():
 		var panel = item_background.instance()
 		panel.rect_position = Vector2(x, y)
 		if i == get_parent().object_hovering:
-			panel.modulate = Color("#ebeaa4")
+			panel.set("custom_styles/panel", load("res://GUI/Inventory/yellow_box.tres"))
 		add_child(panel)
 		x += item_size + buffer
 		if x + item_size + buffer > rect_size.x:
@@ -25,9 +25,9 @@ func redraw():
 	x = 4
 	y = 4
 	for slot in inventory:
-		if slot[0] != null:
-			var id = slot[0]
-			var num = slot[1]
+		if slot != null:
+			var id = slot.id
+			var num = slot.amount
 			var item = item_base.instance()
 			item.get_node("TextureRect").texture = load(ItemDictionary.get_item(id)["icon"])
 			if num > 0:
@@ -49,32 +49,32 @@ func pop_item_at_pos(cursor_pos: Vector2):
 	get_parent().object_inventory_updated()
 	return item
 
-func add_item(item: Array):
-	var id = item[0]
-	var num = item[1]
+func add_item(item: Object):
+	var id = item.id
+	var num = item.amount
 	var stack = ItemDictionary.get_item(id)["stack"]
 	
 	for i in range(max_slots):
 		if i >= inventory.size():
 			if num > stack:
 				num -= stack
-				inventory.append([id, stack])
+				inventory.append(ItemStack.new(id, stack))
 			else:
-				inventory.append([id, num])
+				inventory.append(ItemStack.new(id, num))
 				num = 0
 				break
-		if inventory[i][0] == id:
-			if inventory[i][1] + num > stack:
-				num -= stack - inventory[i][1]
-				inventory[i][1] = stack
+		if inventory[i].id == id:
+			if inventory[i].amount + num > stack:
+				num -= stack - inventory[i].amount
+				inventory[i].amount = stack
 			else:
-				inventory[i][1] = inventory[i][1] + num
+				inventory[i].amount = inventory[i].amount + num
 				num = 0
 				break
 	
 	get_parent().object_inventory_updated()
 	if num > 0:
-		return [id, num]
+		return ItemStack.new(id, num)
 	else:
 		return null
 
@@ -85,9 +85,9 @@ func get_slot_at_pos(cursor_pos: Vector2):
 		return null
 	return slot
 
-func insert_at_slot(slot: int, item: Array):
+func insert_at_slot(slot: int, item: Object):
 	if inventory.size() < max_slots:
-		inventory.insert(slot, [item[0], item[1]])
+		inventory.insert(slot, ItemStack.new(item.id, item.amount))
 	else:
 		#drop items
 		pass

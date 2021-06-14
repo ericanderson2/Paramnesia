@@ -19,7 +19,7 @@ func _ready():
 func _on_Label_resized():
 	$Panel.rect_size.y = $Label.rect_size.y + 6
 	rect_position.y -= $Panel.rect_size.y
-	$Next.rect_position.y = $Panel.rect_position.y + $Panel.rect_size.y - 2
+	$Next.rect_position.y = $Panel.rect_position.y + $Panel.rect_size.y
 	
 	max_lines = $Label.get_line_count()
 

@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://GUI/Inventory/FloatingItemNumber.gd" type="Script" id=2]
+[ext_resource path="res://GUI/Overlay/FloatingItemNumber.gd" type="Script" id=2]
+
 
 [node name="FloatingItemNumber" type="Label"]
 margin_right = 78.0

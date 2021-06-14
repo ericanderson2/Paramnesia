@@ -1,13 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://global_theme.tres" type="Theme" id=1]
-[ext_resource path="res://Fonts/LandasansMedium-ALJ6m.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://Structures/Cage/Interface/CageInterface.gd" type="Script" id=3]
-
-[sub_resource type="DynamicFont" id=1]
-size = 22
-use_filter = true
-font_data = ExtResource( 2 )
 
 [node name="CageInterface" type="Control"]
 anchor_right = 1.0
@@ -28,30 +22,30 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="Background"]
-margin_left = 70.0
 margin_top = 2.0
-margin_right = 114.0
-margin_bottom = 35.0
+margin_right = 183.0
+margin_bottom = 22.0
 text = "Cage"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ReleaseButton" type="Button" parent="Background"]
-margin_left = 46.0
-margin_top = 134.0
-margin_right = 136.0
-margin_bottom = 171.0
+margin_left = 48.0
+margin_top = 151.0
+margin_right = 130.0
+margin_bottom = 175.0
 text = "Release"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PickupButton" type="Button" parent="Background"]
-margin_left = 46.0
-margin_top = 177.0
-margin_right = 137.0
-margin_bottom = 214.0
+margin_left = 49.0
+margin_top = 178.0
+margin_right = 131.0
+margin_bottom = 202.0
 text = "Pickup"
 
 [node name="Creature" type="TextureRect" parent="Background"]
@@ -65,10 +59,8 @@ __meta__ = {
 }
 
 [node name="Name" type="Label" parent="Background"]
-margin_left = 51.0
-margin_top = 103.0
-margin_right = 125.0
-margin_bottom = 126.0
-custom_fonts/font = SubResource( 1 )
+margin_top = 107.0
+margin_right = 183.0
+margin_bottom = 130.0
 align = 1
 [connection signal="pressed" from="Background/ReleaseButton" to="." method="_on_ReleaseButton_pressed"]

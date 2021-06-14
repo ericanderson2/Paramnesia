@@ -1,7 +1,7 @@
 extends Control
 
-const item_base = preload("res://GUI/ObjectInventory/InventoryItem.tscn")
-const item_background = preload("res://GUI/ObjectInventory/ItemBackground.tscn")
+const item_base = preload("res://GUI/Inventory/ObjectInventory/InventoryItem.tscn")
+const item_background = preload("res://GUI/Inventory/ObjectInventory/ItemBackground.tscn")
 
 var item_size: int = 32
 var buffer: int = 10
@@ -25,7 +25,7 @@ func redraw():
 		var panel = item_background.instance()
 		panel.rect_position = Vector2(x - 4, y - 4)
 		if item == selected:
-			panel.modulate = Color("#ebeaa4")
+			panel.set("custom_styles/panel", load("res://GUI/Inventory/yellow_box.tres"))
 		add_child(panel)
 			
 		var recipe = item_base.instance()

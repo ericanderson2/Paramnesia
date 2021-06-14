@@ -1,61 +1,32 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Control/Missions/notification_ninepatch.png" type="Texture" id=1]
-[ext_resource path="res://Fonts/16pt Landasa.tres" type="DynamicFont" id=2]
+[ext_resource path="res://global_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Fonts/fira_sans_16pt.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Control/Missions/Notification.gd" type="Script" id=3]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.686275, 0.917647, 0.917647, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0.172549, 0.172549, 0.172549, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-anti_aliasing = false
 
 [node name="Notification" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
+theme = ExtResource( 1 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Panel" type="Panel" parent="."]
-margin_right = 44.0
-margin_bottom = 21.0
-custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-visible = false
-margin_right = 51.0
-margin_bottom = 15.0
-texture = ExtResource( 1 )
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
+margin_right = 37.0
+margin_bottom = 23.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 4.0
-margin_top = 3.0
-margin_right = 42.0
-margin_bottom = 20.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 35.0
+margin_bottom = 22.0
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.172549, 0.172549, 0.172549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

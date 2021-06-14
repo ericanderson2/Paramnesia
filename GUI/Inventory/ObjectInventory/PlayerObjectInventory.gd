@@ -1,7 +1,7 @@
 extends Control
 
-const item_base = preload("res://GUI/ObjectInventory/InventoryItem.tscn")
-const item_background = preload("res://GUI/ObjectInventory/ItemBackground.tscn")
+const item_base = preload("res://GUI/Inventory/ObjectInventory/InventoryItem.tscn")
+const item_background = preload("res://GUI/Inventory/ObjectInventory/ItemBackground.tscn")
 
 var item_size: int = 32
 var buffer: int = 10
@@ -14,16 +14,16 @@ func redraw():
 		var panel = item_background.instance()
 		panel.rect_position = Vector2(x - 4, y - 4)
 		if i == 0:
-			panel.modulate = Color("#bca2db")
+			panel.set("custom_styles/panel", load("res://GUI/Inventory/purple_box.tres"))
 		elif i == 1:
-			panel.modulate = Color("#879ce3")
-		if i == get_parent().hovering or i == get_parent().selected_slot:
-			panel.modulate = Color("#ebeaa4")
+			panel.set("custom_styles/panel", load("res://GUI/Inventory/blue_box.tres"))
+		if i == get_parent().get_parent().hovering or i == get_parent().get_parent().selected_slot:
+			panel.set("custom_styles/panel", load("res://GUI/Inventory/yellow_box.tres"))
 		add_child(panel)
 		
 		if i < PlayerData.inventory.size():
-			var id = PlayerData.inventory[i].id
-			var num = PlayerData.inventory[i].amount
+			var id = PlayerData.get_item_at_slot(i).id
+			var num = PlayerData.get_item_at_slot(i).amount
 			var item = item_base.instance()
 			item.get_node("TextureRect").texture = load(ItemDictionary.get_item(id)["icon"])
 			if num > 0:

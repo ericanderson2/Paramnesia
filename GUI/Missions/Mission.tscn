@@ -7,8 +7,8 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -100.0
-margin_bottom = -239.0
-rect_min_size = Vector2( 400, 43 )
+margin_bottom = -254.0
+rect_min_size = Vector2( 400, 28 )
 theme = ExtResource( 8 )
 script = ExtResource( 6 )
 __meta__ = {
@@ -17,8 +17,8 @@ __meta__ = {
 
 [node name="Background" type="Panel" parent="."]
 margin_right = 400.0
-margin_bottom = 43.0
-rect_min_size = Vector2( 400, 43 )
+margin_bottom = 28.0
+rect_min_size = Vector2( 400, 28 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -26,42 +26,45 @@ __meta__ = {
 [node name="ExpandButton" type="Button" parent="."]
 margin_left = 3.0
 margin_top = 3.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 37, 37 )
-toggle_mode = true
+margin_right = 25.0
+margin_bottom = 25.0
+focus_mode = 0
+enabled_focus_mode = 0
 text = "+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 42.0
+margin_left = 29.0
 margin_top = 4.0
-margin_right = 396.0
-margin_bottom = 74.0
+margin_right = 383.0
+margin_bottom = 48.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 354.0
-margin_bottom = 33.0
+margin_bottom = 20.0
 
 [node name="Title" type="Label" parent="VBoxContainer/HBoxContainer"]
-margin_right = 39.0
-margin_bottom = 33.0
+margin_right = 33.0
+margin_bottom = 20.0
 text = "Title"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Description" type="Label" parent="VBoxContainer"]
-margin_top = 37.0
+margin_top = 24.0
 margin_right = 354.0
-margin_bottom = 70.0
+margin_bottom = 44.0
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="toggled" from="ExpandButton" to="." method="_on_ExpandButton_toggled"]
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="pressed" from="ExpandButton" to="." method="_on_ExpandButton_pressed"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

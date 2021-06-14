@@ -136,17 +136,11 @@ position = Vector2( -176, -256 )
 [node name="Raft" parent="GlobalYSort/Raft" index="0"]
 position = Vector2( 1569, 237 )
 
-[node name="Horse" parent="GlobalYSort/Mobs" index="0" groups=[
-"Friendly",
-] instance=ExtResource( 7 )]
+[node name="Horse" parent="GlobalYSort/Mobs" index="0" instance=ExtResource( 7 )]
 position = Vector2( 1, -91 )
-collision_layer = 16
-collision_mask = 19
 
 [node name="Fisher" parent="GlobalYSort/Mobs" index="1" instance=ExtResource( 4 )]
 position = Vector2( -149, 3 )
-collision_layer = 16
-collision_mask = 19
 
 [node name="Player" parent="GlobalYSort" index="3"]
 position = Vector2( -199, 5 )
@@ -154,10 +148,10 @@ position = Vector2( -199, 5 )
 [node name="SpawnArea" type="ColorRect" parent="." index="8"]
 visible = false
 modulate = Color( 1, 1, 1, 0.345098 )
-margin_left = -236.0
-margin_top = -124.0
-margin_right = 20.0
-margin_bottom = 132.0
+margin_left = -96.0
+margin_top = -184.0
+margin_right = 160.0
+margin_bottom = 72.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

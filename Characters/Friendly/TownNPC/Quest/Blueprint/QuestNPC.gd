@@ -23,7 +23,7 @@ func object_interacted_with():
 		var d = dialog.instance()
 		d.mission = mission
 		d.connect("mission_accepted", self, "start_mission")
-		get_tree().get_current_scene().get_node("GUI").set_current_window(d)
+		get_tree().get_current_scene().get_node("GUI").set_current_window(d, false)
 
 # warning-ignore:unused_argument
 func start_mission(mission: int):

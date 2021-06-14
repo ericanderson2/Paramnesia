@@ -64,10 +64,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://World/Trees/Tree.gd"
 }, {
-"base": "Control",
+"base": "Reference",
 "class": "ObjectInventory",
 "language": "GDScript",
-"path": "res://GUI/ObjectInventory/ObjectInventoryInterface.gd"
+"path": "res://GUI/Inventory/ObjectInventory/ObjectInventoryInterface.gd"
 }, {
 "base": "TownNPC",
 "class": "QuestNPC",

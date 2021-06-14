@@ -29,19 +29,19 @@ custom_constants/separation = 2
 
 [node name="Title" type="Label" parent="."]
 margin_left = 48.0
-margin_top = 16.0
-margin_right = 126.0
-margin_bottom = 49.0
-text = "MISSIONS"
+margin_top = 19.0
+margin_right = 113.0
+margin_bottom = 39.0
+text = "Missions"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NoMissions" type="Label" parent="."]
-margin_left = 94.0
-margin_top = 81.0
-margin_right = 404.0
-margin_bottom = 186.0
+margin_left = 97.0
+margin_top = 103.0
+margin_right = 407.0
+margin_bottom = 169.0
 text = "You have no active missions. Talk to characters with an '!' over their heads to receive one."
 autowrap = true
 __meta__ = {

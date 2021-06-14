@@ -3,9 +3,10 @@
 [ext_resource path="res://World/Scenes/SceneBlueprint/SceneBlueprint.gd" type="Script" id=1]
 [ext_resource path="res://World/Scenes/SceneBlueprint/Camera2D.gd" type="Script" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://GUI/Inventory/GUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GUI/Overlay/GUI.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Structures/Raft/Raft.tscn" type="PackedScene" id=5]
 [ext_resource path="res://World/Scenes/SceneBlueprint/Pathfinding.gd" type="Script" id=6]
+
 
 [node name="SceneBlueprint" type="Node2D"]
 script = ExtResource( 1 )

@@ -73,7 +73,8 @@ func initialize():
 	var current_sack: int = 0
 	for i in range(starting_items.size()):
 		var sack = sacks[current_sack]
-		sack.inventory.append(starting_items[i])
+		#fix starting_items to hold ItemStacks later
+		sack.inventory.append(ItemStack.new(starting_items[i][0], starting_items[i][1]))
 		if sack.inventory.size() == 1:
 			if randi() % 2 == 1:
 				current_sack += 1

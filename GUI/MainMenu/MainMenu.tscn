@@ -55,7 +55,7 @@ __meta__ = {
 
 [node name="NewGame" type="Button" parent="VBoxContainer"]
 margin_right = 100.0
-margin_bottom = 24.0
+margin_bottom = 22.0
 focus_mode = 0
 text = "New Game"
 __meta__ = {
@@ -63,9 +63,9 @@ __meta__ = {
 }
 
 [node name="LoadGame" type="Button" parent="VBoxContainer"]
-margin_top = 26.0
+margin_top = 24.0
 margin_right = 100.0
-margin_bottom = 50.0
+margin_bottom = 46.0
 focus_mode = 0
 text = "Load Game"
 __meta__ = {
@@ -73,9 +73,9 @@ __meta__ = {
 }
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
-margin_top = 52.0
+margin_top = 48.0
 margin_right = 100.0
-margin_bottom = 76.0
+margin_bottom = 70.0
 focus_mode = 0
 text = "Settings"
 __meta__ = {
@@ -83,9 +83,9 @@ __meta__ = {
 }
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
-margin_top = 78.0
+margin_top = 72.0
 margin_right = 100.0
-margin_bottom = 102.0
+margin_bottom = 94.0
 focus_mode = 0
 text = "Exit"
 __meta__ = {

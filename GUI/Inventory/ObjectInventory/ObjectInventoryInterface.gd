@@ -95,11 +95,11 @@ func _on_SecondaryButton_pressed():
 func _on_HalfButton_pressed():
 	line_edit.visible = false
 	var item = PlayerData.get_item_at_slot(selected_slot)
-	var num = item[1]
+	var num = item.amount
 	var odd_adjustment: int = num % 2
 	if num > 1:
-		PlayerData.set_slot(selected_slot, [item[0], num / 2 + odd_adjustment])
-		var remainder = PlayerData.add_without_stacking([item[0], num / 2])
+		PlayerData.set_slot(selected_slot, ItemStack.new(item.id, num / 2 + odd_adjustment))
+		var remainder = PlayerData.add_without_stacking(ItemStack.new(item.id, num / 2))
 		if remainder != null:
 			PlayerData.add_item(remainder)
 	close_dropdown()
@@ -107,10 +107,10 @@ func _on_HalfButton_pressed():
 func _on_OneButton_pressed():
 	line_edit.visible = false
 	var item = PlayerData.get_item_at_slot(selected_slot)
-	var num = item[1]
+	var num = item.amount
 	if num > 1:
-		PlayerData.set_slot(selected_slot, [item[0], num - 1])
-		var remainder = PlayerData.add_without_stacking([item[0], 1])
+		PlayerData.set_slot(selected_slot, ItemStack.new(item.id, num - 1))
+		var remainder = PlayerData.add_without_stacking(ItemStack.new(item.id, 1))
 		if remainder != null:
 			PlayerData.add_item(remainder)
 	close_dropdown()
@@ -125,10 +125,10 @@ func _on_LineEdit_text_entered(new_text):
 	if new_text.is_valid_integer():
 		var num = int(new_text)
 		var item = PlayerData.get_item_at_slot(selected_slot)
-		if num > 0 and num < item[1]:
-			var split = item[1] - num
-			PlayerData.set_slot(selected_slot, [item[0], split])
-			var remainder = PlayerData.add_without_stacking([item[0], num])
+		if num > 0 and num < item.amount:
+			var split = item.amount - num
+			PlayerData.set_slot(selected_slot, ItemStack.new(item.id, split))
+			var remainder = PlayerData.add_without_stacking(ItemStack.new(item.id, num))
 			if remainder != null:
 				PlayerData.add_item(remainder)
 	close_dropdown()

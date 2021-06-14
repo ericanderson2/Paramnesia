@@ -1,28 +1,46 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://GUI/missions_read.png" type="Texture" id=1]
-[ext_resource path="res://GUI/coins.png" type="Texture" id=2]
-[ext_resource path="res://GUI/Inventory/GUI.gd" type="Script" id=3]
-[ext_resource path="res://GUI/day_night_indicator.png" type="Texture" id=4]
-[ext_resource path="res://Fonts/fira_sans_16pt.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Fonts/fira-sans.medium.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://GUI/ObjectInventory/ItemBackground.tscn" type="PackedScene" id=9]
-[ext_resource path="res://GUI/Inventory/ItemsOverlay.gd" type="Script" id=10]
-[ext_resource path="res://GUI/Inventory/Coins.gd" type="Script" id=16]
+[ext_resource path="res://GUI/Inventory/ObjectInventory/ItemBackground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GUI/Overlay/ItemsOverlay.gd" type="Script" id=2]
+[ext_resource path="res://GUI/Overlay/GUI.gd" type="Script" id=3]
+[ext_resource path="res://GUI/Inventory/blue_box.tres" type="StyleBox" id=4]
+[ext_resource path="res://GUI/Inventory/purple_box.tres" type="StyleBox" id=5]
+[ext_resource path="res://Fonts/fira_sans_16pt.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Fonts/fira-sans.medium.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://GUI/Overlay/Coins.gd" type="Script" id=8]
+[ext_resource path="res://GUI/day_night_indicator.png" type="Texture" id=9]
+[ext_resource path="res://GUI/missions_read.png" type="Texture" id=10]
+[ext_resource path="res://GUI/coins.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 12
 outline_size = 1
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 10
 outline_size = 1
 use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "BlockWindow"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("WindowBlocker:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.733333 ) ]
+}
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 3 )
@@ -31,8 +49,10 @@ script = ExtResource( 3 )
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 40.0
-margin_bottom = 10.0
-custom_fonts/font = ExtResource( 5 )
+margin_bottom = 21.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 6 )
+uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -42,7 +62,7 @@ margin_left = 468.0
 margin_top = 68.0
 margin_right = 498.0
 margin_bottom = 94.0
-texture_normal = ExtResource( 1 )
+texture_normal = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -51,17 +71,17 @@ __meta__ = {
 margin_top = 188.0
 margin_right = 64.0
 margin_bottom = 282.0
-script = ExtResource( 10 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SelectedItem" parent="ItemsOverlay" instance=ExtResource( 9 )]
-self_modulate = Color( 0.737255, 0.635294, 0.858824, 1 )
+[node name="SelectedItem" parent="ItemsOverlay" instance=ExtResource( 1 )]
 margin_left = 11.0
 margin_top = 9.0
 margin_right = 51.0
 margin_bottom = 49.0
+custom_styles/panel = ExtResource( 5 )
 
 [node name="TextureRect" type="TextureRect" parent="ItemsOverlay/SelectedItem"]
 margin_left = 4.0
@@ -86,12 +106,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BackItem" parent="ItemsOverlay" instance=ExtResource( 9 )]
-self_modulate = Color( 0.529412, 0.611765, 0.890196, 1 )
+[node name="BackItem" parent="ItemsOverlay" instance=ExtResource( 1 )]
 margin_left = 12.0
 margin_top = 52.0
 margin_right = 44.0
 margin_bottom = 84.0
+custom_styles/panel = ExtResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="ItemsOverlay/BackItem"]
 margin_left = 4.0
@@ -99,6 +119,9 @@ margin_top = 4.0
 margin_right = 20.0
 margin_bottom = 20.0
 rect_scale = Vector2( 1.5, 1.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="ItemsOverlay/BackItem"]
 margin_left = 8.0
@@ -119,7 +142,7 @@ margin_top = 1.0
 margin_right = 499.0
 margin_bottom = 123.0
 mouse_filter = 2
-script = ExtResource( 16 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -129,7 +152,7 @@ margin_left = 55.0
 margin_top = -1.0
 margin_right = 87.0
 margin_bottom = 31.0
-texture = ExtResource( 2 )
+texture = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -140,7 +163,7 @@ margin_top = 5.0
 margin_right = 50.0
 margin_bottom = 30.0
 grow_horizontal = 0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -148,7 +171,7 @@ __meta__ = {
 
 [node name="DayIndicator" type="Sprite" parent="Overlay"]
 position = Vector2( 72, 51 )
-texture = ExtResource( 4 )
+texture = ExtResource( 9 )
 hframes = 24
 
 [node name="Day" type="Label" parent="Overlay"]
@@ -158,7 +181,7 @@ margin_top = 96.0
 margin_right = 498.0
 margin_bottom = 121.0
 grow_horizontal = 0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -171,9 +194,23 @@ margin_top = 121.0
 margin_right = 496.0
 margin_bottom = 146.0
 grow_horizontal = 0
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="WindowBlocker" type="ColorRect" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 500.0
+margin_bottom = 282.0
+mouse_filter = 2
+color = Color( 0.305882, 0.305882, 0.305882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/BlockWindow = SubResource( 3 )
 [connection signal="pressed" from="MissionsButton" to="." method="_on_MissionsButton_pressed"]

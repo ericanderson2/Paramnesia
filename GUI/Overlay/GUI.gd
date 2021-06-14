@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const inventory_open = preload("res://GUI/NewInventory/Inventory.tscn")
+const inventory_open = preload("res://GUI/Inventory/Inventory.tscn")
 const missions_open = preload("res://GUI/Missions/Missions.tscn")
 
 onready var debug_overlay = get_node("DebugText")
@@ -52,6 +52,7 @@ func close_open_window():
 		show_visible()
 		get_parent().get_node("GlobalYSort/Player").lock_movement = false
 		get_parent().get_node("GlobalYSort/Player/RemoteTransform2D").global_position = get_parent().get_node("GlobalYSort/Player").global_position
+		get_node("WindowBlocker").visible = false
 		return false
 
 func _on_MissionsButton_pressed():
@@ -61,7 +62,7 @@ func _on_MissionsButton_pressed():
 func new_mission():
 	missions_button.texture_normal = load("res://GUI/missions_unread.png")
 
-func set_current_window(window):
+func set_current_window(window, gray_screen: bool = true):
 	close_open_window()
 	hide_visible()
 	get_parent().get_node("GlobalYSort/Player").lock_movement = true
@@ -69,3 +70,8 @@ func set_current_window(window):
 		current_window.queue_free()
 	current_window = window
 	add_child(current_window)
+	
+	if gray_screen:
+		get_node("WindowBlocker").modulate.a = 0
+		get_node("WindowBlocker").visible = true
+		get_node("AnimationPlayer").play("BlockWindow")

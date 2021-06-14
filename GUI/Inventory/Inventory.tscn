@@ -1,21 +1,21 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://GUI/NewInventory/Inventory.gd" type="Script" id=1]
-[ext_resource path="res://GUI/NewInventory/InventoryTabs.tres" type="Theme" id=2]
-[ext_resource path="res://GUI/ObjectInventory/PlayerInventory.gd" type="Script" id=3]
-[ext_resource path="res://GUI/ObjectInventory/dropdown_menu.tres" type="Theme" id=4]
-[ext_resource path="res://global_theme.tres" type="Theme" id=5]
-[ext_resource path="res://GUI/NewInventory/InventoryController.gd" type="Script" id=7]
-[ext_resource path="res://GUI/NewInventory/Crafting.gd" type="Script" id=8]
-[ext_resource path="res://GUI/NewInventory/Recipes.gd" type="Script" id=9]
-[ext_resource path="res://GUI/NewInventory/InfoPanel.gd" type="Script" id=10]
-[ext_resource path="res://Fonts/fira_sans_12pt.tres" type="DynamicFont" id=11]
+[ext_resource path="res://GUI/Inventory/InventoryController.gd" type="Script" id=1]
+[ext_resource path="res://GUI/Inventory/Inventory.gd" type="Script" id=2]
+[ext_resource path="res://GUI/Inventory/Recipes.gd" type="Script" id=3]
+[ext_resource path="res://GUI/Inventory/ObjectInventory/PlayerInventory.gd" type="Script" id=4]
+[ext_resource path="res://GUI/Inventory/InfoPanel.gd" type="Script" id=5]
+[ext_resource path="res://Fonts/fira_sans_12pt.tres" type="DynamicFont" id=6]
+[ext_resource path="res://global_theme.tres" type="Theme" id=7]
+[ext_resource path="res://GUI/Inventory/ObjectInventory/dropdown_menu.tres" type="Theme" id=8]
+[ext_resource path="res://GUI/Inventory/InventoryTabs.tres" type="Theme" id=9]
+[ext_resource path="res://GUI/Inventory/Crafting.gd" type="Script" id=10]
 
 [node name="Inventory" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 5 )
-script = ExtResource( 7 )
+theme = ExtResource( 7 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -27,7 +27,7 @@ margin_left = 35.0
 margin_top = 76.0
 margin_right = -205.0
 margin_bottom = -30.0
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -37,7 +37,7 @@ margin_left = 5.0
 margin_top = 5.0
 margin_right = 257.0
 margin_bottom = 175.0
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -82,7 +82,7 @@ margin_left = 35.0
 margin_top = 76.0
 margin_right = -205.0
 margin_bottom = -30.0
-script = ExtResource( 8 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -92,7 +92,7 @@ margin_left = 290.0
 margin_right = 434.0
 margin_bottom = 176.0
 mouse_filter = 2
-script = ExtResource( 10 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -115,7 +115,7 @@ margin_left = 38.0
 margin_top = 7.0
 margin_right = 134.0
 margin_bottom = 23.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 6 )
 clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -133,7 +133,7 @@ __meta__ = {
 [node name="Level" type="Label" parent="Crafting/InfoPanel/SelectedItem/VBoxContainer"]
 margin_right = 134.0
 margin_bottom = 16.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -142,7 +142,7 @@ __meta__ = {
 margin_top = 20.0
 margin_right = 134.0
 margin_bottom = 36.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 6 )
 autowrap = true
 
 [node name="Recipe" type="VBoxContainer" parent="Crafting/InfoPanel/SelectedItem/VBoxContainer"]
@@ -240,7 +240,7 @@ __meta__ = {
 margin_right = 252.0
 margin_bottom = 170.0
 rect_min_size = Vector2( 252, 170 )
-script = ExtResource( 9 )
+script = ExtResource( 3 )
 
 [node name="ClickBounds" type="Control" parent="Crafting"]
 margin_left = 5.0
@@ -252,7 +252,7 @@ margin_bottom = 173.0
 visible = false
 margin_right = 99.0
 margin_bottom = 89.0
-theme = ExtResource( 4 )
+theme = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -270,7 +270,7 @@ margin_top = 1.0
 margin_right = 96.0
 margin_bottom = 18.0
 focus_mode = 0
-theme = ExtResource( 4 )
+theme = ExtResource( 8 )
 enabled_focus_mode = 0
 text = "Make Primary"
 __meta__ = {
@@ -342,7 +342,7 @@ margin_top = 55.0
 margin_right = 125.0
 margin_bottom = 77.0
 focus_mode = 0
-theme = ExtResource( 2 )
+theme = ExtResource( 9 )
 disabled = true
 text = "Inventory"
 __meta__ = {
@@ -355,7 +355,7 @@ margin_top = 55.0
 margin_right = 206.0
 margin_bottom = 77.0
 focus_mode = 0
-theme = ExtResource( 2 )
+theme = ExtResource( 9 )
 text = "Crafting"
 __meta__ = {
 "_edit_use_anchors_": false

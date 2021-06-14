@@ -10,11 +10,11 @@ func _ready():
 
 func redraw():
 	if PlayerData.holding == 0:
-		selected.self_modulate = Color("#bca2db")
-		back.self_modulate = Color("#879ce3")
+		selected.set("custom_styles/panel", load("res://GUI/Inventory/purple_box.tres"))
+		back.set("custom_styles/panel", load("res://GUI/Inventory/blue_box.tres"))
 	else:
-		selected.self_modulate = Color("#879ce3")
-		back.self_modulate = Color("#bca2db")
+		selected.set("custom_styles/panel", load("res://GUI/Inventory/blue_box.tres"))
+		back.set("custom_styles/panel", load("res://GUI/Inventory/purple_box.tres"))
 
 	var primary_item = PlayerData.get_item_at_slot(PlayerData.holding)
 	if primary_item != null:
