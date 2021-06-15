@@ -1320,29 +1320,29 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=33]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=41]
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachine" id=42]
+[sub_resource type="AnimationNodeStateMachine" id=35]
 states/Idle/node = SubResource( 19 )
 states/Idle/position = Vector2( 212, 144 )
 states/Run/node = SubResource( 24 )
 states/Run/position = Vector2( 367, 285 )
 states/Walk/node = SubResource( 29 )
 states/Walk/position = Vector2( 367, 144 )
-transitions = [ "Idle", "Walk", SubResource( 30 ), "Run", "Walk", SubResource( 31 ), "Walk", "Idle", SubResource( 32 ), "Run", "Idle", SubResource( 33 ), "Walk", "Run", SubResource( 41 ) ]
+transitions = [ "Idle", "Walk", SubResource( 30 ), "Run", "Walk", SubResource( 31 ), "Walk", "Idle", SubResource( 32 ), "Run", "Idle", SubResource( 33 ), "Walk", "Run", SubResource( 34 ) ]
 start_node = "Run"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=43]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=36]
 
-[sub_resource type="CapsuleShape2D" id=44]
+[sub_resource type="CapsuleShape2D" id=37]
 radius = 13.0
 height = 16.0
 
-[sub_resource type="CapsuleShape2D" id=45]
+[sub_resource type="CapsuleShape2D" id=38]
 radius = 9.0
 
-[sub_resource type="CapsuleShape2D" id=46]
+[sub_resource type="CapsuleShape2D" id=39]
 radius = 16.0
 height = 8.0
 
@@ -1439,10 +1439,10 @@ anims/WalkRight = SubResource( 13 )
 anims/WalkUp = SubResource( 14 )
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="10"]
-tree_root = SubResource( 42 )
+tree_root = SubResource( 35 )
 anim_player = NodePath("../AnimationPlayer")
 process_mode = 0
-parameters/playback = SubResource( 43 )
+parameters/playback = SubResource( 36 )
 parameters/Idle/blend_position = Vector2( -1, -0.00468087 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 parameters/Walk/blend_position = Vector2( 0, 0 )
@@ -1450,17 +1450,17 @@ parameters/Walk/blend_position = Vector2( 0, 0 )
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2( 0, -12 )
 rotation = 1.5708
-shape = SubResource( 44 )
+shape = SubResource( 37 )
 
 [node name="SecondaryCollision" type="CollisionShape2D" parent="Hurtbox" index="1"]
 position = Vector2( 0, -17 )
-shape = SubResource( 45 )
+shape = SubResource( 38 )
 disabled = true
 
 [node name="CollisionShape2D" parent="InteractArea" index="0"]
 position = Vector2( 0, -14 )
 rotation = 1.5708
-shape = SubResource( 46 )
+shape = SubResource( 39 )
 
 [node name="SecondaryCollision" type="CollisionShape2D" parent="InteractArea" index="1"]
 position = Vector2( 0, -17 )

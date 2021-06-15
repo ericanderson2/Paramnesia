@@ -9,6 +9,8 @@ export var missions: Array
 func extra_init():
 	schedule = Schedule.new()
 	schedule.add_place(0.0, global_position)
+	
+	update_indicator()
 
 func object_interacted_with():
 	var mission: int = -1
@@ -25,6 +27,14 @@ func object_interacted_with():
 		d.connect("mission_accepted", self, "start_mission")
 		get_tree().get_current_scene().get_node("GUI").set_current_window(d, false)
 
+func update_indicator():
+	for m in missions:
+		if MissionController.can_start(m):
+			get_node("QuestIndicator").visible = true
+			return
+		get_node("QuestIndicator").visible = false
+
 # warning-ignore:unused_argument
 func start_mission(mission: int):
+	update_indicator()
 	pass

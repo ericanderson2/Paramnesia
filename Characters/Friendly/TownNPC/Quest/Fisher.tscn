@@ -220,7 +220,7 @@ height = 14.0
 script = ExtResource( 3 )
 MAX_SPEED = 40
 CAN_ATTACK = true
-missions = [ 1 ]
+missions = [ 1, 2 ]
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 1, -10 )
@@ -257,3 +257,6 @@ shape = SubResource( 24 )
 
 [node name="HealthBar" parent="." index="8"]
 visible = false
+
+[node name="QuestIndicator" parent="." index="16"]
+position = Vector2( 1, -34 )

@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Characters/Friendly/TownNPC/Quest/Blueprint/QuestNPC.gd" type="Script" id=1]
 [ext_resource path="res://Characters/Friendly/TownNPC/Blueprint/TownNPC.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Characters/Friendly/TownNPC/Quest/Blueprint/quest_indicator.png" type="Texture" id=3]
 
 [node name="QuestNPC" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
 CAN_HOVER = true
 CAN_INTERACT = true
+
+[node name="QuestIndicator" type="Sprite" parent="." index="14"]
+visible = false
+position = Vector2( 1, -38 )
+texture = ExtResource( 3 )
