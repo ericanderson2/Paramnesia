@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Fonts/fira_sans_16pt.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/fira-sans.medium.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Effects/DamageNumbers/DamageNumbers.gd" type="Script" id=2]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Fade"
+[sub_resource type="DynamicFont" id=1]
+size = 12
+outline_size = 1
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
 tracks/0/interp = 1
@@ -15,7 +21,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -6, -30 ), Vector2( -6, -50 ) ]
+"values": [ Vector2( -36, -30 ), Vector2( -36, -50 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:modulate")
@@ -24,24 +30,26 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [node name="FriendlyNumbers" type="Label"]
-margin_left = -6.0
+margin_left = -36.0
 margin_top = -30.0
-margin_right = -4.76837e-07
-margin_bottom = -21.0
-custom_fonts/font = ExtResource( 1 )
+margin_right = 36.0
+margin_bottom = -14.0
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 1, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+align = 1
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Fade = SubResource( 1 )
+anims/Fade = SubResource( 2 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

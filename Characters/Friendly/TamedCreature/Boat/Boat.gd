@@ -11,6 +11,7 @@ onready var player_hair = get_node("YSort/PlayerHair")
 const MAX_SPEED: float = 100.0
 const ACCELERATION: float = 100.0
 const FRICTION: float = 20.0
+const floating_numbers = preload("res://Effects/DamageNumbers/EnemyNumbers.tscn")
 
 var interact_distance: int = 50
 var has_focus: bool = false
@@ -19,8 +20,11 @@ export var can_interact: bool = true
 var riding: bool = false
 var velocity: Vector2 = Vector2.ZERO
 var dir: Vector2 = Vector2.ZERO
+var invincible: bool = false
+var health: int = 100 setget set_health
 
 signal boat_entered
+signal destroyed
 
 func _ready():
 	sprite.set_material(sprite.get_material().duplicate())
@@ -110,3 +114,40 @@ func _on_PlayerBody_frame_changed():
 	player_pupils.position = player_body.position
 	player_brows.position = player_body.position
 	player_hair.position = player_body.position
+
+func _on_Hurtbox_area_entered(area):
+	if area.get_parent().has_method("resolve_hit"):
+		area.get_parent().resolve_hit()
+
+	if invincible or not area.get_parent().has_method("get_damage_info"):
+		return
+	
+	var damage_info: Dictionary = area.get_parent().get_damage_info()
+	var damage: int = damage_info["damage"]
+	var reference: Object = damage_info["reference"]
+	if reference == self:
+		return
+	
+	set_health(health - damage)
+	
+	var numbers = floating_numbers.instance()
+	numbers.text = str(damage)
+	add_child(numbers)
+	
+	get_node("HitEffect").emitting = true
+	
+	if damage >= 1:
+		invincible = true
+		get_node("Invincibility").start()
+
+func set_health(passed_health: int):
+	health = passed_health
+	get_node("HealthBar").visible = true
+	$Tween.interpolate_property(get_node("HealthBar"), "value", get_node("HealthBar").value, health, 0.3, Tween.TRANS_LINEAR)
+	$Tween.start()
+	
+	if health <= 0:
+		emit_signal("destroyed")
+
+func _on_Invincibility_timeout():
+	invincible = false

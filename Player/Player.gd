@@ -299,7 +299,7 @@ func stop_riding():
 	brows_sprite.visible = true
 	hair_sprite.visible = true
 	
-	get_node("CollisionShape2D").disabled = false
-	get_node("Hurtbox/CollisionShape2D").disabled = false
+	get_node("Hurtbox/CollisionShape2D").set_deferred("disabled", false)
+	get_node("CollisionShape2D").set_deferred("disabled", false)
 	
 	global_position = current_mount.global_position + Vector2(0, 15)

@@ -103,14 +103,10 @@ start_node = "Idle"
 radius = 7.0
 height = 14.0
 
-[node name="Fisher" groups=[
-"Friendly",
-] instance=ExtResource( 1 )]
-collision_layer = 16
-collision_mask = 19
+[node name="Fisher" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 MAX_SPEED = 40
-outfit = 1
+outfit = 2
 hair = 1
 hair_color = 3
 eye_color = 3

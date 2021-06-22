@@ -36,6 +36,13 @@ func delete_mission(mission):
 	if not MISSIONS[mission]["required"]:
 		active_missions.erase(mission)
 
+func mission_failed(m: int):
+	active_missions.erase(m)
+	var n = notification.instance()
+	n.text = "Mission Failed"
+	var gui = get_tree().get_current_scene().get_node("GUI")
+	gui.add_child(n)
+
 #func player_inventory_changed():
 #	if active_missions.size() < 1:
 #		return

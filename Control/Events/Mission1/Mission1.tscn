@@ -5,11 +5,11 @@
 [ext_resource path="res://Control/Events/Mission1/fin.png" type="Texture" id=3]
 [ext_resource path="res://Control/Events/Mission1/Fin.gd" type="Script" id=4]
 
-[sub_resource type="CapsuleShape2D" id=1]
-height = 14.0
+[sub_resource type="CircleShape2D" id=1]
+radius = 14.0
 
-[sub_resource type="CapsuleShape2D" id=2]
-height = 16.0
+[sub_resource type="CircleShape2D" id=2]
+radius = 14.0357
 
 [node name="Mission1" type="Node2D" groups=[
 "Mission1",
@@ -23,6 +23,7 @@ collision_mask = 512
 script = ExtResource( 4 )
 
 [node name="Timer" type="Timer" parent="Fin"]
+wait_time = 1.5
 autostart = true
 
 [node name="Sprite" type="Sprite" parent="Fin"]
@@ -31,12 +32,15 @@ texture = ExtResource( 3 )
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fin"]
-position = Vector2( 0, 2 )
+position = Vector2( 0, 6 )
 shape = SubResource( 1 )
 
 [node name="Hitbox" type="Area2D" parent="Fin"]
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fin/Hitbox"]
+position = Vector2( 0, 6 )
 shape = SubResource( 2 )
 
 [node name="Boat" parent="." instance=ExtResource( 2 )]
@@ -50,4 +54,14 @@ collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( -40, 50, 16, -8, 112, -8, 152, 32, 152, 111, 95, 169, 18, 169, -40, 110, -40, 50, -48, 50, -48, 176, 160, 176, 160, -16, -48, -16, -48, 50 )
+
+[node name="FisherPosition" type="Position2D" parent="."]
+position = Vector2( 177, 91 )
+
+[node name="BoatBlock" type="StaticBody2D" parent="."]
+collision_layer = 512
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BoatBlock"]
+polygon = PoolVector2Array( 122, 141, 108, 79, 152, 32, 147, 27, 98, 77, 115, 148 )
 [connection signal="timeout" from="Fin/Timer" to="Fin" method="_on_Timer_timeout"]

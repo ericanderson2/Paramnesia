@@ -29,3 +29,12 @@ margin_right = 11.0
 value = 100.0
 texture_over = ExtResource( 1 )
 texture_progress = ExtResource( 3 )
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="input_event" from="InteractArea" to="." method="_on_InteractArea_input_event"]
+[connection signal="mouse_entered" from="InteractArea" to="." method="_on_InteractArea_mouse_entered"]
+[connection signal="mouse_exited" from="InteractArea" to="." method="_on_InteractArea_mouse_exited"]
+[connection signal="body_entered" from="ViewDistance" to="." method="_on_ViewDistance_body_entered"]
+[connection signal="timeout" from="HealthBar/VisibilityTimer" to="." method="_on_VisibilityTimer_timeout"]
+[connection signal="timeout" from="HitEffect" to="." method="_on_HitEffect_timeout"]
+[connection signal="timeout" from="InvincibilityTimer" to="." method="_on_InvincibilityTimer_timeout"]
+[connection signal="timeout" from="FleeTimer" to="." method="_on_FleeTimer_timeout"]

@@ -11,7 +11,7 @@ func start_mission(mission: int):
 func arrived_at_location(location: Vector2):
 	if location == Global.buildings["Lake"] and get_tree().get_nodes_in_group("Mission1").size() == 0:
 		var event = load("res://Control/Events/Mission1/Mission1.tscn").instance()
-		get_tree().get_current_scene().get_node("GlobalYSort").add_child(event)
+		get_tree().get_current_scene().get_node("GlobalYSort").call_deferred("add_child", event)
 		event.global_position = Vector2(-1056, -464)
 		special_interaction = true
 		get_node("QuestIndicator").visible = true

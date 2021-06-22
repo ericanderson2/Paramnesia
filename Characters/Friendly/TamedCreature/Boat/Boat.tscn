@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Characters/Friendly/TamedCreature/Boat/boat.png" type="Texture" id=1]
 [ext_resource path="res://Effects/Shaders/outline_shader.shader" type="Shader" id=2]
@@ -9,10 +9,12 @@
 [ext_resource path="res://Player/Parts/eye_whites.png" type="Texture" id=7]
 [ext_resource path="res://Player/Parts/outfits/outfit_1.png" type="Texture" id=8]
 [ext_resource path="res://Player/Parts/hair/hair_1.png" type="Texture" id=9]
+[ext_resource path="res://Characters/Blueprint/health_bar_top.png" type="Texture" id=10]
+[ext_resource path="res://Characters/Blueprint/health_bar_bottom.png" type="Texture" id=11]
 
 [sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0.748031, 1 )
-colors = PoolColorArray( 0, 0.384521, 0.984375, 1, 1, 1, 1, 1 )
+offsets = PoolRealArray( 0.653543, 1 )
+colors = PoolColorArray( 0, 0.0507813, 1, 1, 1, 1, 1, 1 )
 
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
@@ -27,22 +29,32 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 color_ramp = SubResource( 2 )
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ParticlesMaterial" id=4]
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.39
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 2.0
+color = Color( 0.494118, 0.309804, 0.0392157, 1 )
+
+[sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 2 )
 shader_param/Smooth = false
 shader_param/line_thickness = 0.0
 shader_param/outline_color = Color( 1, 1, 1, 1 )
 shader_param/pixel_size = 1
 
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=6]
 radius = 11.0
 height = 10.0
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=7]
 radius = 16.0
 
-[sub_resource type="Animation" id=7]
-resource_name = "BoatDown"
+[sub_resource type="Animation" id=8]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -117,8 +129,7 @@ tracks/5/keys = {
 "values": [ Vector2( -1, 3 ) ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "BoatLeft"
+[sub_resource type="Animation" id=9]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -193,8 +204,7 @@ tracks/5/keys = {
 "values": [ Vector2( -6, -1 ) ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "BoatRight"
+[sub_resource type="Animation" id=10]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -269,8 +279,7 @@ tracks/5/keys = {
 "values": [ Vector2( 4, -1 ) ]
 }
 
-[sub_resource type="Animation" id=10]
-resource_name = "BoatUp"
+[sub_resource type="Animation" id=11]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -345,34 +354,37 @@ tracks/5/keys = {
 "values": [ Vector2( -1, -4 ) ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=12]
 animation = "BoatLeft"
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=13]
 animation = "BoatDown"
 
-[sub_resource type="AnimationNodeAnimation" id=13]
+[sub_resource type="AnimationNodeAnimation" id=14]
 animation = "BoatRight"
 
-[sub_resource type="AnimationNodeAnimation" id=14]
+[sub_resource type="AnimationNodeAnimation" id=15]
 animation = "BoatUp"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=15]
-blend_point_0/node = SubResource( 11 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=16]
+blend_point_0/node = SubResource( 12 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 12 )
+blend_point_1/node = SubResource( 13 )
 blend_point_1/pos = Vector2( 0, 1.1 )
-blend_point_2/node = SubResource( 13 )
+blend_point_2/node = SubResource( 14 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 14 )
+blend_point_3/node = SubResource( 15 )
 blend_point_3/pos = Vector2( 0, -1.1 )
 min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
-[sub_resource type="CapsuleShape2D" id=16]
+[sub_resource type="CapsuleShape2D" id=17]
 radius = 11.0
 height = 10.0
+
+[sub_resource type="CircleShape2D" id=18]
+radius = 11.0
 
 [node name="Boat" type="KinematicBody2D"]
 collision_layer = 0
@@ -384,8 +396,17 @@ amount = 500
 lifetime = 0.5
 process_material = SubResource( 3 )
 
+[node name="HitEffect" type="Particles2D" parent="."]
+emitting = false
+amount = 100
+lifetime = 0.2
+one_shot = true
+preprocess = 0.1
+explosiveness = 1.0
+process_material = SubResource( 4 )
+
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 4 )
+material = SubResource( 5 )
 position = Vector2( 0, -1 )
 texture = ExtResource( 1 )
 hframes = 4
@@ -442,20 +463,20 @@ position = Vector2( -1, -4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, -1 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( -1, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/BoatDown = SubResource( 7 )
-anims/BoatLeft = SubResource( 8 )
-anims/BoatRight = SubResource( 9 )
-anims/BoatUp = SubResource( 10 )
+anims/BoatDown = SubResource( 8 )
+anims/BoatLeft = SubResource( 9 )
+anims/BoatRight = SubResource( 10 )
+anims/BoatUp = SubResource( 11 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 15 )
+tree_root = SubResource( 16 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/blend_position = Vector2( -0.0108696, -0.37931 )
@@ -464,8 +485,36 @@ parameters/blend_position = Vector2( -0.0108696, -0.37931 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
 position = Vector2( -1, -1 )
-shape = SubResource( 16 )
+shape = SubResource( 17 )
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2( -1, 0 )
+shape = SubResource( 18 )
+
+[node name="Invincibility" type="Timer" parent="."]
+one_shot = true
+
+[node name="HealthBar" type="TextureProgress" parent="."]
+visible = false
+margin_left = -12.0
+margin_top = 16.0
+margin_right = 10.0
+margin_bottom = 20.0
+value = 100.0
+texture_over = ExtResource( 10 )
+texture_progress = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
 [connection signal="frame_changed" from="YSort/PlayerBody" to="." method="_on_PlayerBody_frame_changed"]
 [connection signal="input_event" from="InteractArea" to="." method="_on_InteractArea_input_event"]
 [connection signal="mouse_entered" from="InteractArea" to="." method="_on_InteractArea_mouse_entered"]
 [connection signal="mouse_exited" from="InteractArea" to="." method="_on_InteractArea_mouse_exited"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="timeout" from="Invincibility" to="." method="_on_Invincibility_timeout"]
