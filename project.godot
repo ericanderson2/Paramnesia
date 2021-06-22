@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "TownNPC",
-"class": "AmbientNPC",
-"language": "GDScript",
-"path": "res://Characters/Friendly/TownNPC/Ambient/AmbientNPC.gd"
-}, {
 "base": "KinematicBody2D",
 "class": "Character",
 "language": "GDScript",
@@ -120,7 +115,6 @@ _global_script_classes=[ {
 "path": "res://Characters/Enemy/WildCreature/Blueprint/WildCreature.gd"
 } ]
 _global_script_class_icons={
-"AmbientNPC": "",
 "Character": "",
 "Dialog": "",
 "EnemyCharacter": "",

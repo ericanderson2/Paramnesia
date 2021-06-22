@@ -1,13 +1,30 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Characters/Friendly/TownNPC/Quest/Blueprint/QuestNPC.gd" type="Script" id=1]
 [ext_resource path="res://Characters/Friendly/TownNPC/Blueprint/TownNPC.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Characters/Friendly/TownNPC/Quest/Blueprint/quest_indicator.png" type="Texture" id=3]
+[ext_resource path="res://Effects/Shaders/outline_and_hit.shader" type="Shader" id=4]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 4 )
+shader_param/Smooth = false
+shader_param/line_thickness = 0.0
+shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/pixel_size = 1
+shader_param/highlight = false
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=2]
 
 [node name="QuestNPC" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
 CAN_HOVER = true
 CAN_INTERACT = true
+
+[node name="Sprite" parent="." index="0"]
+material = SubResource( 1 )
+
+[node name="AnimationTree" parent="." index="9"]
+parameters/playback = SubResource( 2 )
 
 [node name="QuestIndicator" type="Sprite" parent="." index="14"]
 visible = false

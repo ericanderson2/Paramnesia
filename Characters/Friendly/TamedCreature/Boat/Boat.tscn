@@ -10,14 +10,14 @@
 [ext_resource path="res://Player/Parts/outfits/outfit_1.png" type="Texture" id=8]
 [ext_resource path="res://Player/Parts/hair/hair_1.png" type="Texture" id=9]
 
-[sub_resource type="Gradient" id=14]
+[sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.748031, 1 )
 colors = PoolColorArray( 0, 0.384521, 0.984375, 1, 1, 1, 1, 1 )
 
-[sub_resource type="GradientTexture" id=15]
-gradient = SubResource( 14 )
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
 
-[sub_resource type="ParticlesMaterial" id=16]
+[sub_resource type="ParticlesMaterial" id=3]
 flag_disable_z = true
 spread = 180.0
 gravity = Vector3( 0, 0, 0 )
@@ -25,23 +25,23 @@ initial_velocity = 50.0
 initial_velocity_random = 0.39
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-color_ramp = SubResource( 15 )
+color_ramp = SubResource( 2 )
 
-[sub_resource type="ShaderMaterial" id=17]
+[sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 2 )
 shader_param/Smooth = false
 shader_param/line_thickness = 0.0
 shader_param/outline_color = Color( 1, 1, 1, 1 )
 shader_param/pixel_size = 1
 
-[sub_resource type="CapsuleShape2D" id=18]
+[sub_resource type="CapsuleShape2D" id=5]
 radius = 11.0
 height = 10.0
 
-[sub_resource type="CircleShape2D" id=19]
+[sub_resource type="CircleShape2D" id=6]
 radius = 16.0
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=7]
 resource_name = "BoatDown"
 loop = true
 tracks/0/type = "value"
@@ -81,7 +81,7 @@ tracks/2/keys = {
 "values": [ 0.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("PlayerBody:frame")
+tracks/3/path = NodePath("YSort/PlayerBody:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -93,7 +93,7 @@ tracks/3/keys = {
 "values": [ 1 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("PlayerBody:position")
+tracks/4/path = NodePath("YSort/PlayerBody:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -102,10 +102,22 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -25 ) ]
+"values": [ Vector2( 0, -12 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("YSort/SecondRider:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 3 ) ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=8]
 resource_name = "BoatLeft"
 loop = true
 tracks/0/type = "value"
@@ -145,7 +157,7 @@ tracks/2/keys = {
 "values": [ 90.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("PlayerBody:frame")
+tracks/3/path = NodePath("YSort/PlayerBody:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -157,7 +169,7 @@ tracks/3/keys = {
 "values": [ 4 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("PlayerBody:position")
+tracks/4/path = NodePath("YSort/PlayerBody:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -166,10 +178,22 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 8, -15 ) ]
+"values": [ Vector2( 8, -5 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("YSort/SecondRider:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -6, -1 ) ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=9]
 resource_name = "BoatRight"
 loop = true
 tracks/0/type = "value"
@@ -209,7 +233,7 @@ tracks/2/keys = {
 "values": [ 90.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("PlayerBody:frame")
+tracks/3/path = NodePath("YSort/PlayerBody:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -221,7 +245,7 @@ tracks/3/keys = {
 "values": [ 7 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("PlayerBody:position")
+tracks/4/path = NodePath("YSort/PlayerBody:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -230,10 +254,22 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -8, -15 ) ]
+"values": [ Vector2( -8, -5 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("YSort/SecondRider:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 4, -1 ) ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=10]
 resource_name = "BoatUp"
 loop = true
 tracks/0/type = "value"
@@ -273,7 +309,7 @@ tracks/2/keys = {
 "values": [ 0.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("PlayerBody:frame")
+tracks/3/path = NodePath("YSort/PlayerBody:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -285,7 +321,7 @@ tracks/3/keys = {
 "values": [ 10 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("PlayerBody:position")
+tracks/4/path = NodePath("YSort/PlayerBody:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -294,35 +330,47 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -6 ) ]
+"values": [ Vector2( 0, 4 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("YSort/SecondRider:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, -4 ) ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=9]
+[sub_resource type="AnimationNodeAnimation" id=11]
 animation = "BoatLeft"
 
-[sub_resource type="AnimationNodeAnimation" id=10]
+[sub_resource type="AnimationNodeAnimation" id=12]
 animation = "BoatDown"
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=13]
 animation = "BoatRight"
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=14]
 animation = "BoatUp"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=13]
-blend_point_0/node = SubResource( 9 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=15]
+blend_point_0/node = SubResource( 11 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 10 )
+blend_point_1/node = SubResource( 12 )
 blend_point_1/pos = Vector2( 0, 1.1 )
-blend_point_2/node = SubResource( 11 )
+blend_point_2/node = SubResource( 13 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 12 )
+blend_point_3/node = SubResource( 14 )
 blend_point_3/pos = Vector2( 0, -1.1 )
 min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
-[sub_resource type="CapsuleShape2D" id=24]
+[sub_resource type="CapsuleShape2D" id=16]
 radius = 11.0
 height = 10.0
 
@@ -331,80 +379,93 @@ collision_layer = 0
 script = ExtResource( 3 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
+emitting = false
 amount = 500
 lifetime = 0.5
-process_material = SubResource( 16 )
+process_material = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 17 )
+material = SubResource( 4 )
 position = Vector2( 0, -1 )
 texture = ExtResource( 1 )
 hframes = 4
 
-[node name="PlayerBody" type="Sprite" parent="."]
+[node name="YSort" type="YSort" parent="."]
+
+[node name="PlayerBody" type="Sprite" parent="YSort"]
 visible = false
-position = Vector2( 0, -6 )
+position = Vector2( 0, 4 )
 texture = ExtResource( 4 )
+offset = Vector2( 0, -10 )
 vframes = 16
 hframes = 3
 frame = 10
 
-[node name="PlayerOutfit" type="Sprite" parent="."]
+[node name="PlayerOutfit" type="Sprite" parent="YSort"]
 visible = false
 texture = ExtResource( 8 )
+offset = Vector2( 0, -10 )
 vframes = 16
 hframes = 3
 
-[node name="PlayerEyes" type="Sprite" parent="."]
+[node name="PlayerEyes" type="Sprite" parent="YSort"]
 visible = false
+z_index = 1
 texture = ExtResource( 7 )
+offset = Vector2( 0, -10 )
 vframes = 16
 hframes = 3
 
-[node name="PlayerPupils" type="Sprite" parent="."]
+[node name="PlayerPupils" type="Sprite" parent="YSort"]
 visible = false
 texture = ExtResource( 5 )
+offset = Vector2( 0, -10 )
 vframes = 16
 hframes = 3
 
-[node name="PlayerBrows" type="Sprite" parent="."]
+[node name="PlayerBrows" type="Sprite" parent="YSort"]
 visible = false
 texture = ExtResource( 6 )
+offset = Vector2( 0, -10 )
 vframes = 16
 hframes = 3
 
-[node name="PlayerHair" type="Sprite" parent="."]
+[node name="PlayerHair" type="Sprite" parent="YSort"]
 visible = false
 texture = ExtResource( 9 )
+offset = Vector2( 0, -10 )
 vframes = 16
 hframes = 3
+
+[node name="SecondRider" type="Position2D" parent="YSort"]
+position = Vector2( -1, -4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, -1 )
-shape = SubResource( 18 )
+shape = SubResource( 5 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( -1, 0 )
-shape = SubResource( 19 )
+shape = SubResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/BoatDown = SubResource( 20 )
-anims/BoatLeft = SubResource( 21 )
-anims/BoatRight = SubResource( 22 )
-anims/BoatUp = SubResource( 23 )
+anims/BoatDown = SubResource( 7 )
+anims/BoatLeft = SubResource( 8 )
+anims/BoatRight = SubResource( 9 )
+anims/BoatUp = SubResource( 10 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 13 )
+tree_root = SubResource( 15 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/blend_position = Vector2( -0.13354, -0.218103 )
+parameters/blend_position = Vector2( -0.0108696, -0.37931 )
 
 [node name="InteractArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
 position = Vector2( -1, -1 )
-shape = SubResource( 24 )
-[connection signal="frame_changed" from="PlayerBody" to="." method="_on_PlayerBody_frame_changed"]
+shape = SubResource( 16 )
+[connection signal="frame_changed" from="YSort/PlayerBody" to="." method="_on_PlayerBody_frame_changed"]
 [connection signal="input_event" from="InteractArea" to="." method="_on_InteractArea_input_event"]
 [connection signal="mouse_entered" from="InteractArea" to="." method="_on_InteractArea_mouse_entered"]
 [connection signal="mouse_exited" from="InteractArea" to="." method="_on_InteractArea_mouse_exited"]

@@ -7,7 +7,7 @@
 [ext_resource path="res://Characters/Blueprint/debug_path_target.png" type="Texture" id=5]
 [ext_resource path="res://Characters/Blueprint/debug_path_target_2.png" type="Texture" id=6]
 
-[sub_resource type="ShaderMaterial" id=1]
+[sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 3 )
 shader_param/Smooth = false
 shader_param/line_thickness = 0.0
@@ -23,7 +23,7 @@ collision_mask = 19
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 1 )
+material = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 

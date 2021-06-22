@@ -3,16 +3,23 @@ extends TownNPC
 class_name QuestNPC
 
 const dialog = preload("res://Characters/Friendly/TownNPC/Quest/Blueprint/Dialog.tscn")
+const action_dialog = preload("res://Characters/Friendly/TownNPC/Quest/Blueprint/ActionDialog.tscn")
 
 export var missions: Array
 
-func extra_init():
+var special_interaction: bool = false
+
+func _ready():
 	schedule = Schedule.new()
 	schedule.add_place(0.0, global_position)
 	
 	update_indicator()
 
 func object_interacted_with():
+	if special_interaction:
+		special_interactions()
+		return
+	
 	var mission: int = -1
 	for m in missions:
 		if MissionController.can_start(m):
@@ -37,4 +44,7 @@ func update_indicator():
 # warning-ignore:unused_argument
 func start_mission(mission: int):
 	update_indicator()
+	pass
+
+func special_interactions():
 	pass

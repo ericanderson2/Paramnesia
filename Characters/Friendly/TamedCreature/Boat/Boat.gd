@@ -1,6 +1,12 @@
 extends KinematicBody2D
 
 onready var sprite = get_node("Sprite")
+onready var player_body = get_node("YSort/PlayerBody")
+onready var player_outfit = get_node("YSort/PlayerOutfit")
+onready var player_eyes = get_node("YSort/PlayerEyes")
+onready var player_pupils = get_node("YSort/PlayerPupils")
+onready var player_brows = get_node("YSort/PlayerBrows")
+onready var player_hair = get_node("YSort/PlayerHair")
 
 const MAX_SPEED: float = 100.0
 const ACCELERATION: float = 100.0
@@ -8,27 +14,32 @@ const FRICTION: float = 20.0
 
 var interact_distance: int = 50
 var has_focus: bool = false
-var can_interact: bool = true
+export var can_interact: bool = true
 
 var riding: bool = false
 var velocity: Vector2 = Vector2.ZERO
+var dir: Vector2 = Vector2.ZERO
+
+signal boat_entered
 
 func _ready():
-	get_node("PlayerHair").texture = load("res://Player/Parts/hair/hair_" + str(PlayerData.hair) + ".png")
-	get_node("PlayerOutfit").texture = load("res://Player/Parts/outfits/outfit_" + str(PlayerData.outfit) + ".png")
+	sprite.set_material(sprite.get_material().duplicate())
 	
-	get_node("PlayerBody").modulate = PlayerData.skin_color
-	get_node("PlayerPupils").modulate = PlayerData.eye_color
-	get_node("PlayerBrows").modulate = PlayerData.brow_color
-	get_node("PlayerHair").modulate = PlayerData.hair_color
+	player_hair.texture = load("res://Player/Parts/hair/hair_" + str(PlayerData.hair) + ".png")
+	player_outfit.texture = load("res://Player/Parts/outfits/outfit_" + str(PlayerData.outfit) + ".png")
+	
+	player_body.modulate = PlayerData.skin_color
+	player_pupils.modulate = PlayerData.eye_color
+	player_brows.modulate = PlayerData.brow_color
+	player_hair.modulate = PlayerData.hair_color
 
 func _physics_process(delta):
 	if riding:
 		var input_vector = Vector2.ZERO
 		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-		var dir = input_vector.normalized()
 		if input_vector != Vector2.ZERO:
+			dir = input_vector.normalized()
 			get_node("AnimationTree").set("parameters/blend_position", input_vector)
 			velocity = velocity.move_toward(dir * MAX_SPEED, ACCELERATION * delta)
 	velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -70,12 +81,12 @@ func try_to_grab_focus():
 			sprite.get_material().set_shader_param("outline_color", Color("#ffffff"))
 
 func set_player_visible(vis: bool):
-	get_node("PlayerBody").visible = vis
-	get_node("PlayerOutfit").visible = vis
-	get_node("PlayerEyes").visible = vis
-	get_node("PlayerPupils").visible = vis
-	get_node("PlayerBrows").visible = vis
-	get_node("PlayerHair").visible = vis
+	player_body.visible = vis
+	player_outfit.visible = vis
+	player_eyes.visible = vis
+	player_pupils.visible = vis
+	player_brows.visible = vis
+	player_hair.visible = vis
 
 func object_interacted_with():
 	riding = not riding
@@ -83,18 +94,19 @@ func object_interacted_with():
 	set_player_visible(riding)
 	if riding:
 		get_tree().get_current_scene().get_node("GlobalYSort/Player").start_riding(self)
+		emit_signal("boat_entered")
 	else:
 		get_tree().get_current_scene().get_node("GlobalYSort/Player").stop_riding()
 
 func _on_PlayerBody_frame_changed():
-	get_node("PlayerOutfit").frame = get_node("PlayerBody").frame
-	get_node("PlayerEyes").frame = get_node("PlayerBody").frame
-	get_node("PlayerPupils").frame = get_node("PlayerBody").frame
-	get_node("PlayerBrows").frame = get_node("PlayerBody").frame
-	get_node("PlayerHair").frame = get_node("PlayerBody").frame
+	player_outfit.frame = player_body.frame
+	player_eyes.frame = player_body.frame
+	player_pupils.frame = player_body.frame
+	player_brows.frame = player_body.frame
+	player_hair.frame = player_body.frame
 	
-	get_node("PlayerOutfit").position = get_node("PlayerBody").position
-	get_node("PlayerEyes").position = get_node("PlayerBody").position
-	get_node("PlayerPupils").position = get_node("PlayerBody").position
-	get_node("PlayerBrows").position = get_node("PlayerBody").position
-	get_node("PlayerHair").position = get_node("PlayerBody").position
+	player_outfit.position = player_body.position
+	player_eyes.position = player_body.position
+	player_pupils.position = player_body.position
+	player_brows.position = player_body.position
+	player_hair.position = player_body.position
